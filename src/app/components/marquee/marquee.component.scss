@@ -1,0 +1,23 @@
+.component-marquee {
+    display: flex;
+   
+    width: 100%;
+}
+
+.component-marquee h1 {
+    flex-shrink: 0;
+    white-space: nowrap; 
+
+    animation: marquee 10s linear infinite;
+    margin: 0 3vw; 
+
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0); 
+    }
+    100% {
+        transform: translateX(calc(-100% - 6vw)); 
+    }
+}

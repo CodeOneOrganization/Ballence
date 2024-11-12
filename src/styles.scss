@@ -15,6 +15,11 @@
     text-transform: uppercase;
 }
 
+::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+}
+
 nav,
 section{
     padding-inline: 1.458vw;
