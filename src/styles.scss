@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+    --color-green: #B6E02A;
+    --color-blue: #0B5294;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+
+    font-family: "Inder", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+section{
+    padding-inline: 1.458vw;
+}
+
+h3{
+    font-size: 3.333vw;
+    letter-spacing: 2%;
+    color: var(--color-blue);
+}
+
+p{
+    font-size: 1.042vw;
+    letter-spacing: 2%;
+
+}
