@@ -1,0 +1,20 @@
+.button-component{
+    cursor: pointer;
+
+    background-color: var(--color-blue);
+    border: none;
+
+    width: 19.948vw;
+    height: 3.438vw;
+
+    margin-top: 2.552vw;
+
+
+    font-size: 1.042vw;
+    color: var(--color-green);
+    -webkit-text-stroke: 0.078vw;
+}
+
+.button-component svg{
+    margin-left: 0.781vw;
+}
