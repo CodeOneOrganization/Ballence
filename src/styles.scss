@@ -15,8 +15,14 @@
     text-transform: uppercase;
 }
 
+nav,
 section{
     padding-inline: 1.458vw;
+}
+h1{
+    font-size: 13.333vw;
+    letter-spacing: 2%;
+    color: var(--color-green);
 }
 
 h3{

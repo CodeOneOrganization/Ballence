@@ -1,0 +1,30 @@
+.nav{
+    position: fixed;
+    z-index: 999;
+    width: 100vw;
+    height: 10.104vw;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-menu{
+    list-style: none;
+    display: flex;
+    align-items: center;
+   gap: 1.5vw;
+   margin-right: 1vw;
+}
+.nav-menu .line{
+    width: 0.1vw;
+    height: 3.542vw;
+    background-color: var(--color-green);
+}
+.nav-menu li{
+    cursor: pointer;
+    color: var(--color-green);
+}
+.nav-logo{
+    font-size: 3.333vw;
+    color: var(--color-green);
+}
