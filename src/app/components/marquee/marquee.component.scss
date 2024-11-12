@@ -11,6 +11,8 @@
     animation: marquee 10s linear infinite;
     margin: 0 3vw; 
 
+    -webkit-text-stroke: 0.5vw;
+
 }
 
 @keyframes marquee {

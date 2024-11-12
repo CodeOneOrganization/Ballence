@@ -10,5 +10,4 @@ import { MarqueeComponent } from "../../components/marquee/marquee.component";
   styleUrl: './hero.component.scss'
 })
 export class HeroComponent {
-
 }
