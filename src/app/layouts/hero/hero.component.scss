@@ -1,0 +1,21 @@
+.hero{
+    position: relative;
+    width: 100vw;
+    height: 72vw;
+    background: url("/heroBackground.jpg") no-repeat center/cover;
+}
+
+
+.hero-card{
+    padding: 2.604vw 0 0 3.073vw;
+    background-color: var(--color-green);
+    width: 28.854vw;
+    height: 26.615vw;
+
+    position: absolute;
+    bottom: 1vw;
+}
+.hero-card p{
+    margin-top: 2.396vw;
+    color: var(--color-blue);
+}
