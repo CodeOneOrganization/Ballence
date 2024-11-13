@@ -1,0 +1,57 @@
+.high_fashion{
+    overflow: hidden;
+
+    position: relative;
+    background-color: var(--color-blue);
+    width: 100vw;
+    height: 72vw;
+}
+.high-fashion-cards{
+    position: absolute;
+    top: 8.125vw;
+    left: 0;
+    display: flex;
+
+}
+.high-fashion-card{
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    padding: 0 0 1vw 1.458vw;
+    
+    width: 50.104vw;
+    height: 64.479vw;
+
+    display: flex;
+    align-items: flex-end;
+
+    z-index: 10;
+}
+
+.high-fashion-card img{
+    object-fit: cover;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    transition: all 1s;
+
+    z-index: -1;
+}
+
+.high-fashion-card:hover img{
+    filter: grayscale(100%);
+    transform: scale(1.1);
+}
+
+.high-fashion-card:first-of-type h2{
+  color: var(--color-blue);
+}
+
+.high-fashion-card:last-of-type h2{
+    color: var(--color-green);
+}

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-marquee',
@@ -8,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './marquee.component.scss'
 })
 export class MarqueeComponent {
+ @Input() text!: string;
 
+ array = [1,2,3,4]
 }

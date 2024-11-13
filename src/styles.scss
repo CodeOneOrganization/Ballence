@@ -13,6 +13,13 @@
     font-family: "Inder", sans-serif;
     font-weight: 400;
     text-transform: uppercase;
+
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar{
+    width: 0;
+    height: 0;
 }
 
 nav,
@@ -23,6 +30,11 @@ h1{
     font-size: 13.333vw;
     letter-spacing: 2%;
     color: var(--color-green);
+}
+
+h2{
+    font-size: 5vw;
+    letter-spacing: 2%;
 }
 
 h3{
