@@ -9,6 +9,4 @@ import { Component, Input } from '@angular/core';
 })
 export class MarqueeComponent {
  @Input() text!: string;
-
- array = [1,2,3,4]
 }
