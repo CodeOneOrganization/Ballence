@@ -1,5 +1,61 @@
 .news{
-    width: 100vw;
-    height: 60.365vw;
+    width: auto;
+    // height: 60.365vw;
+
     background-color: var(--color-green);
+}
+
+.news .title {
+    
+}
+
+.news .wrapper {
+    white-space: nowrap;
+    overflow: hidden;
+
+    cursor: grab;
+}
+
+.news .wrapper:active {
+    cursor: grabbing;
+}
+
+.news .wrapper .item {
+    display: inline-block;
+
+}
+
+.news .wrapper .item picture {
+    display: block;
+
+    aspect-ratio: 466 / 845;
+    // height: 78vh;
+    width: calc((100vw - 2 * var(--container-padding)) / 4);
+    min-width: 300px;
+
+    border: 1px solid var(--color-black);
+}
+
+// Removing border left from [2, n] elements form wrapper
+.news .wrapper .item:not(:nth-of-type(1)) picture {
+    border-left: 0;
+}
+
+.news .wrapper .item .info {
+    padding-inline: 51px;
+
+}
+
+.news .wrapper .item .name {
+    display: inline;
+    float: left;
+    font-size: 1em;
+}
+
+
+.news .wrapper .item .price  {
+    display: inline;
+    float: right;
+
+    font-size: 1em;
 }

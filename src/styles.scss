@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 :root{
+    --section-padding: max(136px, 7.08vw);
+    --container-padding: 1.458vw;
+
+    --color-black: #000;
     --color-green: #B6E02A;
     --color-blue: #0B5294;
 }
@@ -22,29 +26,45 @@
     height: 0;
 }
 
-nav,
-section{
-    padding-inline: 1.458vw;
+nav {
+    padding-inline: var(--container-padding);
 }
+
+section {
+    position: relative;
+
+    padding-top: var(--section-padding);
+    padding-inline: var(--container-padding);
+}
+
+// TYPOGRAPHY
+.blue {
+    color: #0B5294;
+}
+
+.green {
+    color: var(--color-green);
+}
+
 h1{
     font-size: 13.333vw;
     letter-spacing: 2%;
     color: var(--color-green);
 }
 
-h2{
+h2 {
     font-size: 5vw;
     letter-spacing: 2%;
 }
 
-h3{
+h3 {
     font-size: 3.333vw;
     letter-spacing: 2%;
     color: var(--color-blue);
 }
 
-p{
-    font-size: 1.042vw;
+p {
+    font-size: max(1.25em, 1.042vw);
     letter-spacing: 2%;
 
 }
