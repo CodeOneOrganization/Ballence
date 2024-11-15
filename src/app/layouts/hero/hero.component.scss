@@ -1,8 +1,10 @@
 .hero{
     position: relative;
     
-    width: 100vw;
+    // width: 100vw;
+    padding-top: 0;
     height: 72vw;
+    // max-height: 100vh;
     background: url("/heroBackground.jpg") no-repeat center/cover;
 }
 
