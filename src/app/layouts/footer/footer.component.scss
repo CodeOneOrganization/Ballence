@@ -1,0 +1,26 @@
+.footer{
+    background-color: var(--color-blue);
+    height: 46.302vw;
+}
+
+.footer h1{
+    text-align: center;
+
+    margin-top: 9.063vw;
+}
+
+.navigation{
+    margin-top: 13.188vw;
+    
+    list-style: none;
+
+    color: var(--color-green);
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.833vw;
+}
+
+.navigation li{
+    cursor: pointer;
+}
