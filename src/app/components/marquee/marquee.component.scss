@@ -1,35 +1,29 @@
 .component-marquee {
     display: flex;
-   
+
     width: 100%;
 }
-
+.animation{
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    white-space: nowrap;
+    animation: marquee 10s linear infinite;
+}
 .component-marquee h1 {
     cursor: default;
-    flex-shrink: 0;
-    white-space: nowrap; 
 
-    // transition: all .2s;
-
-    animation: marquee 10s linear infinite;
-    margin: 0 3vw; 
+    margin: 0 3vw;
 
     -webkit-text-stroke: 0.5vw;
-
 }
-
-// .component-marquee:hover h1{
-//     // animation-play-state: paused;
-//     // animation-direction: reverse;
-    
-//     color: var(--color-blue);
-// }
 
 @keyframes marquee {
     0% {
-        transform: translateX(0); 
+        transform: translateX(0);
     }
+
     100% {
-        transform: translateX(calc(-100% - 6vw)); 
+        transform: translateX(calc(-100% - 0vw));
     }
 }

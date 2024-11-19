@@ -5,11 +5,12 @@ import { NavComponent } from "./components/nav/nav.component";
 import { HighFashionClothingsComponent } from "./layouts/high-fashion-clothings/high-fashion-clothings.component";
 import { NewsComponent } from "./layouts/news/news.component";
 import { FooterComponent } from "./layouts/footer/footer.component";
+import { AboutComponent } from "./layouts/about/about.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeroComponent, NavComponent, HighFashionClothingsComponent, NewsComponent, FooterComponent],
+  imports: [RouterOutlet, HeroComponent, NavComponent, HighFashionClothingsComponent, NewsComponent, FooterComponent, AboutComponent],
   templateUrl: './app.component.html',
 })
 export class AppComponent {
