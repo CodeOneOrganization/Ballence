@@ -1,4 +1,6 @@
 .about{
+    overflow: hidden;
+    position: relative;
     background-color: var(--color-blue);
     height: 60.365vw;
 }
@@ -11,4 +13,25 @@
 
 .about-marquee{
     margin-top: 13.854vw;
+}
+
+.about img{
+    pointer-events: none;
+}
+
+.about img:first-of-type{
+    width: 24.57vw;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.about img:last-of-type{
+    width: 16.667vw;
+    object-fit: cover;
+    position: absolute;
+    right: 1.458vw;
+    bottom: 3vw;
 }
