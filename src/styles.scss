@@ -22,8 +22,8 @@
 }
 
 ::-webkit-scrollbar{
-    // width: 0;
-    // height: 0;
+    width: 0;
+    height: 0;
 }
 
 nav {
@@ -64,7 +64,7 @@ h3 {
 }
 
 p {
-    font-size: max(1.25em, 1.042vw);
+    font-size: 1.042vw;
     letter-spacing: 2%;
 
 }
