@@ -2,7 +2,7 @@
     <nav class="nav">
         <h1 class="nav-logo" (click)="onClick('#hero')">ballence</h1>
         <menu class="nav-menu">
-            <li>all products</li>
+            <a [href]="isHome? '/products': '/' "><li>{{isHome? 'all Products' : 'Home'}}</li></a>
             <div class="line"></div>
             <li (click)="onClick('#about')">About</li>
             <div class="line"></div>

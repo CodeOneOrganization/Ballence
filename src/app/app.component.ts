@@ -6,9 +6,11 @@ import { HighFashionClothingsComponent } from "./layouts/high-fashion-clothings/
 import { NewsComponent } from "./layouts/news/news.component";
 import { FooterComponent } from "./layouts/footer/footer.component";
 import { AboutComponent } from "./layouts/about/about.component";
-import Lenis from 'lenis'
+
 import 'lenis/dist/lenis.css'
 import { LenisScrollService } from './services/LenisScrollService';
+import { CommonModule } from '@angular/common';
+import { IsHomePageService } from './services/IsHomePageService';
 
 @Component({
   selector: 'app-root',
@@ -20,16 +22,25 @@ import { LenisScrollService } from './services/LenisScrollService';
     HighFashionClothingsComponent, 
     NewsComponent, 
     FooterComponent, 
-    AboutComponent
+    AboutComponent,
+    CommonModule
   ],
   templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit{
   
+  isHome!: boolean;  
 
-  constructor(private lenisScrollService: LenisScrollService){}
+  constructor(private lenisScrollService: LenisScrollService, private isHomePageService: IsHomePageService){}
 
   ngOnInit(): void {
-    this.lenisScrollService.onInit()
+    this.lenisScrollService.onInit();
+
+    this.isHomePageService.verify().subscribe((value)=>{
+      this.isHome = value;
+    })
+
+
+    console.log(this.isHome)
   }
 }
