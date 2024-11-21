@@ -8,24 +8,28 @@ import { FooterComponent } from "./layouts/footer/footer.component";
 import { AboutComponent } from "./layouts/about/about.component";
 import Lenis from 'lenis'
 import 'lenis/dist/lenis.css'
+import { LenisScrollService } from './services/LenisScrollService';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeroComponent, NavComponent, HighFashionClothingsComponent, NewsComponent, FooterComponent, AboutComponent],
+  imports: [
+    RouterOutlet, 
+    HeroComponent, 
+    NavComponent, 
+    HighFashionClothingsComponent, 
+    NewsComponent, 
+    FooterComponent, 
+    AboutComponent
+  ],
   templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit{
+  
+
+  constructor(private lenisScrollService: LenisScrollService){}
 
   ngOnInit(): void {
-    
-      const lenis = new Lenis({
-        autoRaf: true,
-        touchMultiplier: 0
-      });
-
-      lenis.on('scroll', (e) => {
-        console.log(e);
-      });
+    this.lenisScrollService.onInit()
   }
 }

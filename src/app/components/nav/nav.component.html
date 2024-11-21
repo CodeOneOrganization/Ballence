@@ -1,12 +1,12 @@
 <header class="nav-header">
     <nav class="nav">
-        <h1 class="nav-logo">ballence</h1>
+        <h1 class="nav-logo" (click)="onClick('#hero')">ballence</h1>
         <menu class="nav-menu">
             <li>all products</li>
             <div class="line"></div>
-            <li>About</li>
+            <li (click)="onClick('#about')">About</li>
             <div class="line"></div>
-            <li>news</li>
+            <li (click)="onClick('#news')">news</li>
         </menu>
     </nav>
 </header>
