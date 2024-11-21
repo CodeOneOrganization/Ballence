@@ -6,6 +6,7 @@ import { HighFashionClothingsComponent } from "./layouts/high-fashion-clothings/
 import { NewsComponent } from "./layouts/news/news.component";
 import { FooterComponent } from "./layouts/footer/footer.component";
 import { AboutComponent } from "./layouts/about/about.component";
+
 import { LenisScrollService } from './services/LenisScrollService';
 import { CommonModule } from '@angular/common';
 import { IsHomePageService } from './services/IsHomePageService';
