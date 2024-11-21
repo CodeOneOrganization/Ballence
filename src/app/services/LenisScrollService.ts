@@ -15,9 +15,6 @@ export class LenisScrollService{
 
         });
 
-        this.lenis.on('scroll', (e) => {
-            console.log(e);
-        });
     }
 
     scrollTo(link: string): void{
