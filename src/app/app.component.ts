@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeroComponent } from "./layouts/hero/hero.component";
 import { NavComponent } from "./components/nav/nav.component";
@@ -25,20 +25,18 @@ import { IsHomePageService } from './services/IsHomePageService';
   ],
   templateUrl: './app.component.html',
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements AfterViewInit{
   
   isHome!: boolean;  
 
   constructor(private lenisScrollService: LenisScrollService, private isHomePageService: IsHomePageService){}
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     this.lenisScrollService.onInit();
 
     this.isHomePageService.verify().subscribe((value)=>{
       this.isHome = value;
     })
 
-
-    console.log(this.isHome)
   }
 }
