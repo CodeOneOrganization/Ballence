@@ -22,6 +22,8 @@
     gap: 0.833vw;
 }
 
+.navigation a,
 .navigation li{
+    color: var(--color-green);
     cursor: pointer;
 }

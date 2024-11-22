@@ -5,9 +5,10 @@ import Lenis from "lenis";
     providedIn: 'root'
 })
 export class LenisScrollService{
-    lenis!: Lenis;
+    
+    private lenis!: Lenis;
 
-    onInit(): void {
+    public onInit(): void {
 
         this.lenis = new Lenis({
             autoRaf: true,
@@ -17,7 +18,7 @@ export class LenisScrollService{
 
     }
 
-    scrollTo(link: string): void{
+    public scrollTo(link: string): void{
         this.lenis.scrollTo(link)
     }
 }

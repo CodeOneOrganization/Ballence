@@ -20,10 +20,30 @@
     height: 3.542vw;
     background-color: var(--color-green);
 }
+
 .nav-menu li{
+    position: relative;
     cursor: pointer;
     color: var(--color-green);
 }
+
+.nav-menu li::before{
+    content: '';
+    width: 0%;
+    height: 0.08vw;
+    background-color: var(--color-green);
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    transition: width 0.1s ease-in;
+}
+
+.nav-menu li:hover::before{
+    width: 100%;
+}
+
 .nav-logo{
     cursor: pointer;
     
