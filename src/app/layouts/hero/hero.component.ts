@@ -52,7 +52,15 @@ export class HeroComponent implements AfterViewInit { // Corrigido para 'AfterVi
       duration: 2,
       delay: 1.6
     });
-    
+
+    gsap.to('.hero-card-h3-span ', {
+      y: 0,
+      ease: "power2.inOut",
+      stagger: 0.2,
+      duration: 2,
+      delay: 2
+    });
+
   }
 
   ngAfterViewInit(): void {
