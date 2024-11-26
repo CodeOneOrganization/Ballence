@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LenisScrollService } from '../../services/LenisScrollService';
 import { IsHomePageService } from '../../services/IsHomePageService';
+import gsap from 'gsap'
 
 @Component({
   selector: 'app-nav',

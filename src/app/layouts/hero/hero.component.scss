@@ -37,6 +37,14 @@
     color: var(--color-blue);
 }
 
+.hero-card h3{
+    overflow: hidden;
+}
+.hero-card-h3-span{
+    display: block;
+    transform: translateY(200%);
+}
+
 .hero-marquee{
     overflow: hidden;
     margin-top: 11.875vw;
