@@ -9,5 +9,12 @@
   background-color: white;
 
   transform: translate(-50%, -50%);
+
+  z-index: 99;
 }
 
+.image{
+  width: calc(24.57vw * 0.8);
+  aspect-ratio: 322 / 483;
+  object-fit: contain;
+}

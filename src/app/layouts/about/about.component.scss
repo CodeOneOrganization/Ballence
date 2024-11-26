@@ -15,9 +15,7 @@
     margin-top: 13.854vw;
 }
 
-.about img{
-    pointer-events: none;
-}
+
 
 .about img:first-of-type{
     width: 24.57vw;
@@ -26,6 +24,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: all .1s;
 }
 
 .about img:last-of-type{
@@ -34,4 +33,6 @@
     position: absolute;
     right: 1.458vw;
     bottom: 3vw;
+    transition: all .1s;
+    
 }
