@@ -1,22 +1,25 @@
 <section class="about" id="about">
-    <div class="about-marquee">
-        <app-marquee text="about"></app-marquee>
-    </div>
-    
-    <img src="/men.jpg" alt="">
-    <img src="/woman.jpg" alt="">
+  <div class="about-marquee">
+    <app-marquee text="about"></app-marquee>
+  </div>
 
-    <p>
-        skskalkslklaslsajsijsiajiawjsjajw <br>
-        swjaoiwsjawoijsoiajwsjjawjsjas <br>
-        awjsoiwjsajjwsajwsasoiajsjaoi
-    </p>
+  
+  <app-cursor-interactive-slide *ngIf="isMouseEvent" [imgSrc]="image"></app-cursor-interactive-slide>
 
-    <br>
+  <img id="test" src="/men.jpg" alt="">
+  <img id="woman" src="/woman.jpg" alt="">
 
-    <p>
-        skskalkslklaslsajsijsiajiawjsjajw <br>
-        swjaoiwsjawoijsoiajwsjjawjsjas <br>
-        awjsoiwjsajjwsajwsasoiajsjaoi
-    </p>
+  <p>
+    skskalkslklaslsajsijsiajiawjsjajw <br>
+    swjaoiwsjawoijsoiajwsjjawjsjas <br>
+    awjsoiwjsajjwsajwsasoiajsjaoi
+  </p>
+
+  <br>
+
+  <p>
+    skskalkslklaslsajsijsiajiawjsjajw <br>
+    swjaoiwsjawoijsoiajwsjjawjsjas <br>
+    awjsoiwjsajjwsajwsasoiajsjaoi
+  </p>
 </section>
