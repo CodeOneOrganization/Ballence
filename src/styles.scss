@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+
 :root{
     --section-padding: max(136px, 7.08vw);
     --container-padding: 1.458vw;
@@ -64,7 +65,12 @@ h3 {
 }
 
 p {
-    font-size: max(1.25em, 1.042vw);
+    font-size: 1.042vw;
     letter-spacing: 2%;
 
 }
+
+a{
+    text-decoration: none;
+}
+

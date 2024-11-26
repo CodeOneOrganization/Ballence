@@ -2,11 +2,12 @@
   <h1>ballence</h1>
 
   <menu class="navigation">
-    <li>all products</li>
-    <li>the new collection</li>
-    <li>
-      
+    <a [href]="isHome? '/products': '/' "><li>{{isHome? 'all Products' : 'Home'}}</li></a>
+    <li (click)="onClick('#news')">{{isHome? 'news' : 'new collection'}}</li>
+    <li (click)="onClick(0)">
+
       back to top
+
       <svg
         width="0.833vw"
         height="0.885vw"

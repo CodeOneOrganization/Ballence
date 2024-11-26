@@ -29,6 +29,7 @@
 }
 
 .high-fashion-card img{
+    pointer-events: none;
     object-fit: cover;
 
     position: absolute;
