@@ -4,12 +4,26 @@
     // width: 100vw;
     padding-top: 0;
     height: 72vw;
-    // max-height: 100vh;
-    background: url("/heroBackground.jpg") no-repeat center/cover;
+    background-color: var(--color-green);
+    
 }
 
+.container{
+    background-color: transparent;
+}
+
+.hero img {
+    position: absolute;
+    
+
+    width: 20%;
+    height: 20%;
+
+    object-fit: cover;
+}
 
 .hero-card{
+    transform: translateY(100%);
     padding: 2.604vw 0 0 3.073vw;
     background-color: var(--color-green);
     width: 28.854vw;
@@ -24,5 +38,10 @@
 }
 
 .hero-marquee{
+    overflow: hidden;
     margin-top: 11.875vw;
+}
+
+.hero-marquee .marquee{
+    transform: translateY(100%);
 }

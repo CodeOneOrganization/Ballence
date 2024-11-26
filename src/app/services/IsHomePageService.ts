@@ -12,7 +12,7 @@ export class IsHomePageService {
 
     constructor(private router: Router) {}
 
-    verify(): Observable<boolean> {
+    public verify(): Observable<boolean> {
         return new Observable<boolean>((observer) => {
             this.router.events.pipe(
                 filter(event => event instanceof NavigationEnd)
