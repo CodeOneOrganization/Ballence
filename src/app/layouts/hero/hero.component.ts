@@ -58,6 +58,10 @@ export class HeroComponent implements AfterViewInit {
       ease: "power2.inOut",
       stagger: 0.2,
       duration: 2,
+
+      onComplete: ()=>{
+        tl.kill();
+      }
       
     }, '-=1.5');
 
