@@ -9,5 +9,15 @@
   background-color: white;
 
   transform: translate(-50%, -50%);
+  pointer-events: none;
+
+  z-index: 998;
 }
 
+.cursor-follower.visible {
+  opacity: 1;
+}
+
+.cursor-follower.hidden {
+  opacity: 0;
+}
