@@ -3,10 +3,10 @@
     <app-marquee text="about"></app-marquee>
   </div>
 
-  <app-cursor-interactive-slide></app-cursor-interactive-slide>
+  <app-cursor-interactive-slide *ngIf="isMouseEvent" [imgSrc]="image"></app-cursor-interactive-slide>
 
-  <img class="image-of-man" (mouseenter)="onMouseEnterInImage" (mouseleave)="onMouseLeaveInImage" src="/men.jpg" alt="">
-  <img src="/woman.jpg" alt="">
+  <img id="test" src="/men.jpg" alt="">
+  <img id="woman" src="/woman.jpg" alt="">
 
   <p>
     skskalkslklaslsajsijsiajiawjsjajw <br>

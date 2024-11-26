@@ -1,6 +1,6 @@
 import GSAP from "gsap"
 
-import { Component, HostListener, OnDestroy } from "@angular/core";
+import { AfterViewInit, Component, HostListener, Input, OnDestroy } from "@angular/core";
 
 @Component({
   templateUrl: "./cursor-interactive-slide.component.html",
@@ -10,7 +10,10 @@ import { Component, HostListener, OnDestroy } from "@angular/core";
   styleUrl: "./cursor-interactive-slide.component.scss",
 })
 
-export class CursorInteractiveSlideComponent implements OnDestroy {
+export class CursorInteractiveSlideComponent implements OnDestroy, AfterViewInit {
+
+  @Input() imgSrc!: string;
+
   private mouse = {
     x: {
       current: 0,
@@ -29,8 +32,8 @@ export class CursorInteractiveSlideComponent implements OnDestroy {
 
   @HostListener("document:mousemove", ["$event"])
   public onMouseMove(event: MouseEvent) {
-    this.mouse.x.target = event.clientX
-    this.mouse.y.target = event.clientY
+    this.mouse.x.target = window.innerWidth - event.clientX
+    this.mouse.y.target = window.innerHeight - event.clientY
   }
 
   public onMouseEnterInImage() {
@@ -49,8 +52,13 @@ export class CursorInteractiveSlideComponent implements OnDestroy {
   ngOnInit(): void {
     this.setX = GSAP.quickSetter(".cursor-follower", "left", "px")
     this.setY = GSAP.quickSetter(".cursor-follower", "top", "px")
+  }
 
+  ngAfterViewInit(): void {
     this.animate()
+
+    this.setX = GSAP.quickSetter(".cursor-follower", "left", "px")
+    this.setY = GSAP.quickSetter(".cursor-follower", "top", "px")
   }
 
   public animate() {
