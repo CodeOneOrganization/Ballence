@@ -21,4 +21,6 @@ export class LenisScrollService{
     public scrollTo(link: string): void{
         this.lenis.scrollTo(link)
     }
+
+    
 }
