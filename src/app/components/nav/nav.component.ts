@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LenisScrollService } from '../../services/LenisScrollService';
 import { IsHomePageService } from '../../services/IsHomePageService';
 import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger';
 
 @Component({
   selector: 'app-nav',
@@ -20,15 +21,16 @@ export class NavComponent implements OnInit{
   ){}
 
   ngOnInit(): void {
+
     this.isHomePageService.verify().subscribe((value)=>{
       this.isHome = value
       console.log('ishome nav' + this.isHome)
     })
   }
 
-  onClick(link: any): void{
-    this.lenisScrollService.scrollTo(link)
 
+  protected onClick(link: any): void{
+    this.lenisScrollService.scrollTo(link)
   }
 
 }
