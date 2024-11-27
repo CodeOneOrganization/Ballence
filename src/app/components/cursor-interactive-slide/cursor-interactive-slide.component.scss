@@ -24,11 +24,17 @@
 =======
 
   z-index: 99;
+  pointer-events: none;
 }
 
 .image{
   width: calc(24.57vw * 0.8);
   aspect-ratio: 322 / 483;
   object-fit: contain;
+<<<<<<< HEAD
 >>>>>>> ce2df65884dcc9b62c297c0db6bb2ebea6f1f9d3
+=======
+  
+  pointer-events: inherit;
+>>>>>>> douglas
 }

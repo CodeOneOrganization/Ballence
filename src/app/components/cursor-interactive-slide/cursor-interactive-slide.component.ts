@@ -32,6 +32,7 @@ export class CursorInteractiveSlideComponent implements OnDestroy, AfterViewInit
 
   @HostListener("document:mousemove", ["$event"])
   public onMouseMove(event: MouseEvent) {
+<<<<<<< HEAD
     this.mouse.x.target = window.innerWidth - event.clientX
     this.mouse.y.target = window.innerHeight - event.clientY
   }
@@ -52,6 +53,10 @@ export class CursorInteractiveSlideComponent implements OnDestroy, AfterViewInit
   ngOnInit(): void {
     this.setX = GSAP.quickSetter(".cursor-follower", "left", "px")
     this.setY = GSAP.quickSetter(".cursor-follower", "top", "px")
+=======
+    this.mouse.x.target = window.innerWidth - event.clientX ;  
+    this.mouse.y.target = window.innerHeight - event.clientY;
+>>>>>>> douglas
   }
 
   ngAfterViewInit(): void {

@@ -1,8 +1,8 @@
 
 import { CommonModule } from '@angular/common';
-import {  AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { MarqueeComponent } from "../../components/marquee/marquee.component";
-import { CursorInteractiveSlideComponent } from "../../components/cursor-interactive-slide.component/cursor-interactive-slide.component";
+import { CursorInteractiveSlideComponent } from "../../components/cursor-interactive-slide/cursor-interactive-slide.component";
 
 @Component({
   selector: 'app-about',
@@ -20,69 +20,29 @@ export class AboutComponent implements AfterViewInit {
   image!: string
 
   ngAfterViewInit(): void {
-    this.menMouseEvent()
-    this.womanMouseEvent()
-
-
+    this.initImageSliders()
   }
 
-  menMouseEvent(): void{
+  public initImageSliders(): void {
     const ref = document.getElementById('test');
-    const aboutRef = document.getElementById('about');
- 
-    ref?.addEventListener('mousemove', () => {
-      this.isMouseEventMen = true;
-      this.isMouseEvent = true
-      console.log('Mouse Move:', this.isMouseEventMen);
-      this.image = '/men.jpg'
-    });
+    const imageSliderRef = document.querySelectorAll<HTMLImageElement>('.image-slider');
 
-    aboutRef?.addEventListener('mouseenter', () => {
-      this.isMouseEventMen = false;
-      this.isMouseEvent = false
-      console.log('Mouse Enter:', this.isMouseEventMen);
-      this.image = ''
-    });
+    imageSliderRef.forEach((imageElement) => {
+      imageElement.addEventListener("mouseenter", () => {
+        const imageSrc = String(imageElement.dataset["imageSrc"])
 
-    aboutRef?.addEventListener('mouseleave', () => {
-      this.isMouseEventMen = false;
-      this.isMouseEvent = false
-      console.log('Mouse Leave:', this.isMouseEventMen);
-      this.image = ''
-    });
-    
-  }
+        this.isMouseEventMen = true;
+        this.isMouseEvent = true
+        console.log('Mouse Enter:', this.isMouseEventMen);
+        this.image = imageSrc
+      })
 
-  womanMouseEvent(): void{
-    
-    const ref = document.getElementById('woman');
-    const aboutRef = document.getElementById('about');
- 
-    ref?.addEventListener('mousemove', () => {
-      
-      this.isMouseEventWoman = true;
-      this.isMouseEvent = true
-      console.log('Mouse Move:', this.isMouseEventWoman);
-      this.image = '/woman.jpg'
-    });
-
-    aboutRef?.addEventListener('mouseenter', () => {
-      
-      this.isMouseEventWoman = false;
-      if(!this.isMouseEventWoman){
-        ref!.style.filter = 'grayscale(0%)';
-      }
-      this.isMouseEvent = false
-      console.log('Mouse Enter:', this.isMouseEventWoman);
-      this.image = ''
-    });
-
-    aboutRef?.addEventListener('mouseleave', () => {
-      this.isMouseEventWoman = false;
-
-      this.isMouseEvent = false;
-      console.log('Mouse Leave:', this.isMouseEventWoman);
-      this.image = ''
-    });
+      imageElement?.addEventListener('mouseleave', () => {
+        this.isMouseEventMen = false;
+        this.isMouseEvent = false
+        console.log('Mouse Leave:', this.isMouseEventMen);
+        this.image = ''
+      });
+    })
   }
 }
