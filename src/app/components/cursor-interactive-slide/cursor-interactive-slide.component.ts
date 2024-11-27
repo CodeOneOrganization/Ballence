@@ -34,7 +34,6 @@ export class CursorInteractiveSlideComponent implements OnDestroy, AfterViewInit
   public onMouseMove(event: MouseEvent) {
     this.mouse.x.target = window.innerWidth - event.clientX ;  
     this.mouse.y.target = window.innerHeight - event.clientY;
-    console.log("onMouseMove fired")
   }
 
   ngAfterViewInit(): void {

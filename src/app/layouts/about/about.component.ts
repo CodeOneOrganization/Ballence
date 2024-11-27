@@ -1,8 +1,8 @@
 
 import { CommonModule } from '@angular/common';
-import {  AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { MarqueeComponent } from "../../components/marquee/marquee.component";
-import { CursorInteractiveSlideComponent } from "../../components/cursor-interactive-slide.component/cursor-interactive-slide.component";
+import { CursorInteractiveSlideComponent } from "../../components/cursor-interactive-slide/cursor-interactive-slide.component";
 
 @Component({
   selector: 'app-about',
@@ -14,46 +14,35 @@ import { CursorInteractiveSlideComponent } from "../../components/cursor-interac
 
 export class AboutComponent implements AfterViewInit {
 
+  isMouseEventMen: boolean = false;
+  isMouseEventWoman: boolean = false;
   isMouseEvent: boolean = false;
   image!: string
 
   ngAfterViewInit(): void {
-    this.menMouseEvent()
-    this.womanMouseEvent()
-
-    const aboutRef = document.getElementById('about');
-    aboutRef?.addEventListener('mouseenter', () => {
-      this.isMouseEvent = false
-
-      this.image = ''
-    });
-
-    aboutRef?.addEventListener('mouseleave', () => {
-      this.isMouseEvent = false;
-
-      this.image = ''
-    });
+    this.initImageSliders()
   }
 
-  menMouseEvent(): void{
+  public initImageSliders(): void {
     const ref = document.getElementById('test');
- 
-    ref?.addEventListener('mousemove', () => {
-  
-      this.isMouseEvent = true
-  
-      this.image = '/men.jpg'
-    });
-    
-  }
+    const imageSliderRef = document.querySelectorAll<HTMLImageElement>('.image-slider');
 
-  womanMouseEvent(): void{
-    const ref = document.getElementById('woman');
+    imageSliderRef.forEach((imageElement) => {
+      imageElement.addEventListener("mouseenter", () => {
+        const imageSrc = String(imageElement.dataset["imageSrc"])
 
-    ref?.addEventListener('mousemove', () => {
-      this.isMouseEvent = true
-   
-      this.image = '/woman.jpg'
-    });
+        this.isMouseEventMen = true;
+        this.isMouseEvent = true
+        console.log('Mouse Enter:', this.isMouseEventMen);
+        this.image = imageSrc
+      })
+
+      imageElement?.addEventListener('mouseleave', () => {
+        this.isMouseEventMen = false;
+        this.isMouseEvent = false
+        console.log('Mouse Leave:', this.isMouseEventMen);
+        this.image = ''
+      });
+    })
   }
 }
