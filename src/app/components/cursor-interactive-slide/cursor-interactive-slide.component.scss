@@ -7,8 +7,10 @@
   width: calc(24.57vw * 0.8);
 
   background-color: white;
+  box-shadow: 0.9vw 0.9vw var(--color-green);
 
   transform: translate(-50%, -50%);
+<<<<<<< HEAD
   pointer-events: none;
 
   z-index: 998;
@@ -20,15 +22,22 @@
 
 .cursor-follower.hidden {
   opacity: 0;
+=======
+>>>>>>> 8f7a61c1c682158cb98de59f8bb241f0b87e727d
 
   z-index: 99;
   pointer-events: none;
 }
 
 .image{
-  width: calc(24.57vw * 0.8);
+  width: 100%;
+  height: 100%;
   aspect-ratio: 322 / 483;
   object-fit: contain;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8f7a61c1c682158cb98de59f8bb241f0b87e727d
   
   pointer-events: inherit;
 }
