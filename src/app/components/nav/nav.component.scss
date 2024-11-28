@@ -26,6 +26,9 @@
     position: relative;
     cursor: pointer;
     color: var(--color-green);
+
+    transition: all .5s;
+
 }
 
 .nav-menu li::before{
@@ -52,4 +55,5 @@
     color: var(--color-green);
     -webkit-text-stroke: 0.1vw;
 
+    transition: all .5s;
 }
