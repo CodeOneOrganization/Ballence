@@ -27,36 +27,22 @@ export class CursorInteractiveSlideComponent implements OnDestroy, AfterViewInit
   }
   private setX!: Function
   private setY!: Function
+  private width!: number
+  private height!: number
   private animationId: number | null = null
+  left!: number;
+  top!: number;
+  x_ci!: number;
+  y_ci!: number;
 
 
   @HostListener("document:mousemove", ["$event"])
   public onMouseMove(event: MouseEvent) {
-<<<<<<< HEAD
-    this.mouse.x.target = window.innerWidth - event.clientX
-    this.mouse.y.target = window.innerHeight - event.clientY
-  }
+    const x_c = event.clientX
+    const y_c = event.clientY
 
-  public onMouseEnterInImage() {
-    console.log("onMouseEnterInImage fired")
-    const element = document.querySelector<HTMLDivElement>(".cursor-follower")!
-
-    element.classList.add(".visible")
-  }
-
-  public onMouseLeaveInImage() {
-    const element = document.querySelector<HTMLDivElement>(".cursor-follower")!
-
-    element.classList.add(".hidden")
-  }
-
-  ngOnInit(): void {
-    this.setX = GSAP.quickSetter(".cursor-follower", "left", "px")
-    this.setY = GSAP.quickSetter(".cursor-follower", "top", "px")
-=======
-    this.mouse.x.target = window.innerWidth - event.clientX ;  
-    this.mouse.y.target = window.innerHeight - event.clientY;
->>>>>>> douglas
+    this.mouse.x.target = this.x_ci - (x_c - this.x_ci);
+    this.mouse.y.target = this.y_ci - (y_c - this.y_ci);
   }
 
   ngAfterViewInit(): void {
@@ -64,6 +50,16 @@ export class CursorInteractiveSlideComponent implements OnDestroy, AfterViewInit
 
     this.setX = GSAP.quickSetter(".cursor-follower", "left", "px")
     this.setY = GSAP.quickSetter(".cursor-follower", "top", "px")
+
+    const cursorSlider = document.querySelector<HTMLDivElement>(".cursor-follower")!
+
+    this.width = cursorSlider.offsetWidth
+    this.height = cursorSlider.offsetHeight
+    this.left = cursorSlider.offsetLeft
+    this.top = cursorSlider.offsetTop
+
+    this.x_ci = (this.width / 2 + this.left)
+    this.y_ci = (this.height / 2 + this.top)
   }
 
   public animate() {

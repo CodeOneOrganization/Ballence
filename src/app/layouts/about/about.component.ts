@@ -24,11 +24,16 @@ export class AboutComponent implements AfterViewInit {
   }
 
   public initImageSliders(): void {
-    const ref = document.getElementById('test');
     const imageSliderRef = document.querySelectorAll<HTMLImageElement>('.image-slider');
 
     imageSliderRef.forEach((imageElement) => {
-      imageElement.addEventListener("mouseenter", () => {
+      // imageElement.addEventListener("")
+
+      imageElement.addEventListener("mousemove", () => {
+         
+      })
+
+      imageElement.addEventListener("mouseenter", (e) => {
         const imageSrc = String(imageElement.dataset["imageSrc"])
 
         this.isMouseEventMen = true;
