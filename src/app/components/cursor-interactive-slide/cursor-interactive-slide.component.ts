@@ -19,11 +19,11 @@ export class CursorInteractiveSlideComponent implements OnDestroy, AfterViewInit
     x: {
       current: 0,
       target: 0,
-      ease: 0.1
+      ease: 0.3
     }, y: {
       current: 0,
       target: 0,
-      ease: 0.1
+      ease: 0.3
     }
   }
   private setX!: Function
