@@ -25,15 +25,10 @@ export class CursorInteractiveSlideComponent implements OnDestroy, AfterViewInit
       ease: 0.1
     }
   }
-<<<<<<< HEAD
   private setX!: Function
   private setY!: Function
   private width!: number
   private height!: number
-=======
-  private setX = GSAP.quickSetter(".cursor-follower", "left", "px")
-  private setY = GSAP.quickSetter(".cursor-follower", "top", "px")
->>>>>>> 8f7a61c1c682158cb98de59f8bb241f0b87e727d
   private animationId: number | null = null
   left!: number;
   top!: number;
@@ -43,17 +38,11 @@ export class CursorInteractiveSlideComponent implements OnDestroy, AfterViewInit
 
   @HostListener("document:mousemove", ["$event"])
   public onMouseMove(event: MouseEvent) {
-<<<<<<< HEAD
     const x_c = event.clientX
     const y_c = event.clientY
 
     this.mouse.x.target = this.x_ci - (x_c - this.x_ci);
     this.mouse.y.target = this.y_ci - (y_c - this.y_ci);
-=======
-    this.mouse.x.target = window.innerWidth - event.clientX ;  
-    this.mouse.y.target = window.innerHeight - event.clientY;
-    console.log("onMouseMove fired")
->>>>>>> 8f7a61c1c682158cb98de59f8bb241f0b87e727d
   }
 
   ngAfterViewInit(): void {

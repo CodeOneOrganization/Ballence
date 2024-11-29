@@ -1,8 +1,18 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { LenisScrollService } from '../../services/LenisScrollService';
 import { IsHomePageService } from '../../services/IsHomePageService';
+import { NewsComponent } from '../../layouts/news/news.component';
+import { ElementsService } from '../../services/ElementsService.service';
+
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+export enum PageThemeEnum {
+  GREEN = "green",
+  BLUE = "blue"
+}
+
+
 
 @Component({
   selector: 'app-nav',
@@ -15,10 +25,12 @@ export class NavComponent implements OnInit, AfterViewInit {
 
   isHome!: boolean;
 
+  @ViewChild(NewsComponent, { read: ElementRef }) private newsComponentRef!: ElementRef
   constructor(
-    private lenisScrollService: LenisScrollService, 
+    private lenisScrollService: LenisScrollService,
     private isHomePageService: IsHomePageService,
-  ) {}
+    private elementsService: ElementsService
+  ) { }
 
   ngOnInit(): void {
     this.isHomePageService.verify().subscribe((value) => {
@@ -26,41 +38,43 @@ export class NavComponent implements OnInit, AfterViewInit {
       console.log('ishome nav: ' + this.isHome);
     });
 
- 
+    // this.initThemeEventListeners()
+
   }
 
-  ngAfterViewInit(): void {
+  public initThemeEventListeners() {
     gsap.registerPlugin(ScrollTrigger);
+    const news = this.elementsService.getNewsElement()
+    console.log("news", news)
+
+    if (!news) return
 
     ScrollTrigger.create({
-      trigger: '.nav',
+      trigger: ".news",
+      start: "top top",
+      end: "bottom bottom",
       markers: true,
-      start: '814% top',
-      end: '814% bottom',
-      scrub: true,
-      
+      onLeaveBack: () => {
+        document.body.dataset["themeSchema"]! = PageThemeEnum.BLUE
+      },
       onEnter: () => {
-        this.animateNavOnScroll()
-      },
-      onLeave: ()=>{
-        
-      },
-      onEnterBack: () => {
-        this.animateNavOnScroll()
-      },
-      onLeaveBack: ()=>{
-     
+        document.body.dataset["themeSchema"]! = PageThemeEnum.GREEN
       }
     })
 
+  }
 
+  ngAfterViewInit(): void {
+    this.initThemeEventListeners()
+
+    console.log("service ElementsService", ElementsService)
   }
 
   protected onClick(link: any): void {
     this.lenisScrollService.scrollTo(link);
   }
 
-  private animateNavOnScroll(): void{
+  private animateNavOnScroll(): void {
 
     gsap.to('.nav h1', {
       color: "var(--color-blue)",
