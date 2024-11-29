@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Lenis from 'lenis';
-import { LenisScrollService } from '../../services/LenisScrollService';
-import { IsHomePageService } from '../../services/IsHomePageService';
+import { LenisScrollService } from '../../services/LenisScrollService.service';
+import { IsHomePageService } from '../../services/IsHomePageService.service';
 
 @Component({
   selector: 'app-footer',

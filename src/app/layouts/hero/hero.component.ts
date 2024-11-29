@@ -2,7 +2,7 @@ import { AfterViewInit, Component } from '@angular/core';
 import { ButtonComponent } from "../../components/button/button.component";
 import { MarqueeComponent } from "../../components/marquee/marquee.component";
 import gsap from 'gsap';
-import { LenisScrollService } from '../../services/LenisScrollService';
+import { LenisScrollService } from '../../services/LenisScrollService.service';
 
 @Component({
   selector: 'app-hero',
