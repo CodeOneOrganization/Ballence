@@ -6,10 +6,21 @@
   aspect-ratio: 322 / 483;
   width: calc(24.57vw * 0.8);
 
-  background-color: white;
+background: transparent;
   box-shadow: 0.9vw 0.9vw var(--color-green);
 
   transform: translate(-50%, -50%);
+  pointer-events: none;
+
+  z-index: 998;
+}
+
+.cursor-follower.visible {
+  opacity: 1;
+}
+
+.cursor-follower.hidden {
+  opacity: 0;
 
   z-index: 99;
   pointer-events: none;
@@ -21,6 +32,5 @@
   aspect-ratio: 322 / 483;
   object-fit: contain;
 
-  
   pointer-events: inherit;
 }

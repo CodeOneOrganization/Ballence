@@ -1,4 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, OnDestroy } from '@angular/core';
+import { ElementsService } from '../../services/ElementsService.service';
+
+import gsap from "gsap"
+import ScrollTrigger from "gsap/ScrollTrigger"
+
+export enum PageThemeEnum {
+  GREEN = "green",
+  BLUE = "blue"
+}
 
 @Component({
   selector: 'app-news',
@@ -7,6 +16,42 @@ import { Component } from '@angular/core';
   templateUrl: './news.component.html',
   styleUrl: './news.component.scss'
 })
-export class NewsComponent {
+export class NewsComponent implements AfterViewInit, OnDestroy {
+  scrollTrigger!: globalThis.ScrollTrigger;
+  constructor(
+    private elementsService: ElementsService
+  ) { }
+
+  ngAfterViewInit(): void {
+    const news = document.querySelector<HTMLDivElement>(".news")!
+    this.elementsService.setNewsElement(news)
+
+    gsap.registerPlugin(ScrollTrigger)
+
+    this.scrollTrigger = ScrollTrigger.create({
+      trigger: ".news",
+      start: "top top",
+      end: "bottom top",
+      // markers: true,
+      onLeaveBack: () => {
+        document.body.dataset["themeSchema"]! = PageThemeEnum.GREEN
+      },
+      onLeave: () => {
+        document.body.dataset["themeSchema"]! = PageThemeEnum.GREEN
+      },
+      onEnter: () => {
+        document.body.dataset["themeSchema"]! = PageThemeEnum.BLUE
+      },
+      onEnterBack: () => {
+        document.body.dataset["themeSchema"]! = PageThemeEnum.BLUE
+      },
+    })
+
+
+  }
+
+  ngOnDestroy(): void {
+    this.scrollTrigger.kill()
+  }
 
 }
