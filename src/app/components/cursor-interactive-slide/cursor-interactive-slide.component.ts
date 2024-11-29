@@ -66,7 +66,7 @@ export class CursorInteractiveSlideComponent implements OnDestroy, AfterViewInit
     this.animationId = requestAnimationFrame(() => this.animate())
   }
 
-  public ngOnDestroy(): void {
+    ngOnDestroy(): void {
     if (this.animationId) {
       cancelAnimationFrame(this.animationId)
     }

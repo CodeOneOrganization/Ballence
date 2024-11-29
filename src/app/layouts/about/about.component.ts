@@ -21,43 +21,49 @@ export class AboutComponent implements AfterViewInit {
   image!: string
 
   constructor(private cursorService: CursorInteractiveSlideService) { }
+
   ngAfterViewInit(): void {
     this.initImageSliders()
   }
 
   public initImageSliders(): void {
+
+    //pega as duas imagens
     const imageSliderRef = document.querySelectorAll<HTMLImageElement>('.image-slider');
 
+    //percorre as imagens selecionadas
     imageSliderRef.forEach((imageElement) => {
-      // imageElement.addEventListener("")
 
       imageElement.addEventListener("mousemove", () => {
 
       })
 
+      //evento de entrada
       imageElement.addEventListener("mouseenter", (e) => {
+
+        //url da imagem
         const imageSrc = String(imageElement.dataset["imageSrc"])
-        // const elementCenterPosition = e.offsetX + eoco
-        // console.log("e.clientWidth", imageElement.clientWidth)
-        // console.log("e.clientHeight", imageElement.clientHeight)
-        // console.log("e.offsetX", e.offsetX)
-        // console.log("e.offsetY", e.offsetY)
+
+        // pega a largura da tela e diminui pela distancia da imagem
         const imageLeft = window.innerWidth - imageElement.offsetLeft
+        
         console.log("🚀 ~ AboutComponent ~ imageElement.addEventListener ~ imageLeft:", imageLeft)
+       
+        //quase entendendo
         const x_ci = (imageElement.clientWidth / 2) + imageLeft
-        // console.log("🚀 ~ AboutComponent ~ imageElement.addEventListener ~ x_ci:", x_ci)
+       
         const y_ci = (imageElement.clientHeight / 2) + imageElement.scrollTop
-        // console.log("🚀 ~ AboutComponent ~ imageElement.addEventListener ~ y_ci:", y_ci)
+
+        //onde o usuario passa o mouse
         const x_c = e.clientX
         const y_c = e.clientY
 
-
+        //variaveis
         this.isMouseEventMen = true;
         this.isMouseEvent = true
-        // console.log('Mouse Enter:', this.isMouseEventMen);
         this.image = imageSrc
-        // this.cursorService.setCursor()
 
+        //setando os valores do cursos
         this.cursorService.setCursor({
           x_c,
           y_c,
@@ -65,12 +71,10 @@ export class AboutComponent implements AfterViewInit {
           y_ci
         })
       })
-        console.log("🚀 ~ AboutComponent ~ imageElement.addEventListener ~ imageLeft:", imageLeft)
 
       imageElement?.addEventListener('mouseleave', () => {
         this.isMouseEventMen = false;
         this.isMouseEvent = false
-        // console.log('Mouse Leave:', this.isMouseEventMen);
         this.image = ''
       });
     })

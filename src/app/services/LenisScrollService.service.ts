@@ -21,14 +21,19 @@ export class LenisScrollService{
 
         this.lenis.on('scroll', ScrollTrigger.update)
 
-        gsap.ticker.add((time) => {
-            this.lenis.raf(time * 1000); 
-        });
+    
     }
 
     public scrollTo(link: string): void{
         this.lenis.scrollTo(link)
     }
     
+    public pauseLenis(): void{
+        this.lenis.stop()
+    }
+
+    public startLenis(): void{
+        this.lenis.start()
+    }
     
 }

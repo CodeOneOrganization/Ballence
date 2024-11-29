@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { LenisScrollService } from '../../services/LenisScrollService';
-import { IsHomePageService } from '../../services/IsHomePageService';
+import { LenisScrollService } from '../../services/LenisScrollService.service';
+import { IsHomePageService } from '../../services/IsHomePageService.service';
 import { NewsComponent } from '../../layouts/news/news.component';
 import { ElementsService } from '../../services/ElementsService.service';
 

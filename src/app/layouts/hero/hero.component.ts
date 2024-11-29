@@ -2,7 +2,7 @@ import { AfterViewInit, Component } from '@angular/core';
 import { ButtonComponent } from "../../components/button/button.component";
 import { MarqueeComponent } from "../../components/marquee/marquee.component";
 import gsap from 'gsap';
-import { LenisScrollService } from '../../services/LenisScrollService';
+import { LenisScrollService } from '../../services/LenisScrollService.service';
 
 @Component({
   selector: 'app-hero',
@@ -13,11 +13,12 @@ import { LenisScrollService } from '../../services/LenisScrollService';
 })
 export class HeroComponent implements AfterViewInit { 
 
- 
-
   constructor(private lenisScrollService: LenisScrollService) {}
 
   onEnterAnimation(): void {
+    
+    this.lenisScrollService.pauseLenis()
+
     const tl = gsap.timeline()
 
     tl.to('.hero img', {
@@ -61,6 +62,7 @@ export class HeroComponent implements AfterViewInit {
 
       onComplete: ()=>{
         tl.kill();
+        this.lenisScrollService.startLenis()
       }
       
     }, '-=1.5');
