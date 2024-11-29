@@ -7,9 +7,9 @@ import { NewsComponent } from "./layouts/news/news.component";
 import { FooterComponent } from "./layouts/footer/footer.component";
 import { AboutComponent } from "./layouts/about/about.component";
 
-import { LenisScrollService } from './services/LenisScrollService';
+import { LenisScrollService } from './services/LenisScrollService.service';
 import { CommonModule } from '@angular/common';
-import { IsHomePageService } from './services/IsHomePageService';
+import { IsHomePageService } from './services/IsHomePageService.service';
 
 @Component({
   selector: 'app-root',

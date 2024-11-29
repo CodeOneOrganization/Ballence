@@ -21,17 +21,34 @@ export class AboutComponent implements AfterViewInit {
   image!: string
 
   constructor(private cursorService: CursorInteractiveSlideService) { }
+
   ngAfterViewInit(): void {
     this.initImageSliders()
   }
 
   public initImageSliders(): void {
+
+    //pega as duas imagens
     const imageSliderRef = document.querySelectorAll<HTMLImageElement>('.image-slider');
 
+    //percorre as imagens selecionadas
     imageSliderRef.forEach((imageElement) => {
+      // window.addEventListener("scroll", () => {
+      //   const { x, y, width, height } = imageElement.getBoundingClientRect()
+      //   const x_ci = (width / 2) + x
+      //   const y_ci = (height / 2) + y
+      //   console.log("newCursorPositionX", x_ci)
+      //   console.log("newCursorPositionY", y_ci)
 
+      //   this.cursorService.setCursor({ x_ci, y_ci })
+      // })
+
+      //evento de entrada
       imageElement.addEventListener("mouseenter", (e) => {
         const imageSrc = String(imageElement.dataset["imageSrc"])
+        const imageHeight = Number(imageElement.dataset["imageHeight"])
+        console.log("imageHeight", imageHeight)
+
         const { x, y, width, height } = imageElement.getBoundingClientRect()
         const x_ci = (width / 2) + x
         const y_ci = (height / 2) + y
@@ -40,13 +57,13 @@ export class AboutComponent implements AfterViewInit {
         this.isMouseEvent = true
         this.image = imageSrc
 
-        this.cursorService.setCursor({ x_ci, y_ci })
+
+        this.cursorService.setCursor({ x_ci, y_ci, height: imageHeight })
       })
 
       imageElement?.addEventListener('mouseleave', () => {
         this.isMouseEventMen = false;
         this.isMouseEvent = false
-        // console.log('Mouse Leave:', this.isMouseEventMen);
         this.image = ''
       });
     })
