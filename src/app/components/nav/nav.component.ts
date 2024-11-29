@@ -53,7 +53,7 @@ export class NavComponent implements OnInit, AfterViewInit {
       trigger: ".news",
       start: "top top",
       end: "bottom bottom",
-      markers: true,
+      // markers: true,
       onLeaveBack: () => {
         document.body.dataset["themeSchema"]! = PageThemeEnum.BLUE
       },

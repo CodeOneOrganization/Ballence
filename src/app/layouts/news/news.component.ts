@@ -32,22 +32,18 @@ export class NewsComponent implements AfterViewInit, OnDestroy {
       trigger: ".news",
       start: "top top",
       end: "bottom top",
-      markers: true,
+      // markers: true,
       onLeaveBack: () => {
         document.body.dataset["themeSchema"]! = PageThemeEnum.GREEN
-        console.log("onLeaveBack")
       },
       onLeave: () => {
         document.body.dataset["themeSchema"]! = PageThemeEnum.GREEN
-        console.log("onLeave")
       },
       onEnter: () => {
         document.body.dataset["themeSchema"]! = PageThemeEnum.BLUE
-        console.log("onEnter")
       },
       onEnterBack: () => {
         document.body.dataset["themeSchema"]! = PageThemeEnum.BLUE
-        console.log("onEnterBack")
       },
     })
 
