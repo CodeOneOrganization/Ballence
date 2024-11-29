@@ -13,11 +13,12 @@ import { LenisScrollService } from '../../services/LenisScrollService.service';
 })
 export class HeroComponent implements AfterViewInit { 
 
- 
-
   constructor(private lenisScrollService: LenisScrollService) {}
 
   onEnterAnimation(): void {
+    
+    this.lenisScrollService.pauseLenis()
+
     const tl = gsap.timeline()
 
     tl.to('.hero img', {
@@ -61,6 +62,7 @@ export class HeroComponent implements AfterViewInit {
 
       onComplete: ()=>{
         tl.kill();
+        this.lenisScrollService.startLenis()
       }
       
     }, '-=1.5');

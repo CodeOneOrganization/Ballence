@@ -28,5 +28,12 @@ export class LenisScrollService{
         this.lenis.scrollTo(link)
     }
     
+    public pauseLenis(): void{
+        this.lenis.stop()
+    }
+
+    public startLenis(): void{
+        this.lenis.start()
+    }
     
 }
