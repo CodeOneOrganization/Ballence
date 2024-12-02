@@ -16,6 +16,19 @@
 }
 
 
+.about img{
+    transition: filter 1.2s var(--animation-ease), transform 0.8s var(--animation-ease);
+    cursor: pointer;
+}
+
+.about img:hover {
+    filter: brightness(0.66);
+    transform: scale(0.99);
+}
+
+.about img:first-of-type:hover {
+    transform: translate(-50%, -50%) scale(0.99);
+}
 
 .about img:first-of-type{
     width: 24.57vw;
@@ -23,7 +36,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1);
     transition: all .1s;
 }
 

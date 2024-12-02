@@ -19,14 +19,15 @@ export class CursorInteractiveSlideComponent implements OnDestroy, AfterViewInit
     x: {
       current: 0,
       target: 0,
-      ease: 0.1
+      ease: 0.05
     }, y: {
       current: 0,
       target: 0,
-      ease: 0.1
+      ease: 0.05
     }
   }
   private setX!: Function
+  private setHeight!: Function
   private setY!: Function
   private animationId: number | null = null
   left!: number;
@@ -52,9 +53,14 @@ export class CursorInteractiveSlideComponent implements OnDestroy, AfterViewInit
   ngAfterViewInit(): void {
     this.setX = GSAP.quickSetter(".cursor-follower", "left", "px")
     this.setY = GSAP.quickSetter(".cursor-follower", "top", "px")
+    this.setHeight = GSAP.quickSetter(".cursor-follower", "height", "px")
+
+    this.setX(this.cursorService.x_ci)
+    this.setY(this.cursorService.y_ci)
 
     this.animate()
   }
+
 
   public animate() {
     this.mouse.x.current = GSAP.utils.interpolate(this.mouse.x.current, this.mouse.x.target, this.mouse.x.ease)
@@ -62,11 +68,12 @@ export class CursorInteractiveSlideComponent implements OnDestroy, AfterViewInit
 
     this.setX(this.mouse.x.current)
     this.setY(this.mouse.y.current)
+    this.setHeight(this.cursorService.height)
 
     this.animationId = requestAnimationFrame(() => this.animate())
   }
 
-    ngOnDestroy(): void {
+  ngOnDestroy(): void {
     if (this.animationId) {
       cancelAnimationFrame(this.animationId)
     }

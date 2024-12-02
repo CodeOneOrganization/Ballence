@@ -1,10 +1,10 @@
 <section class="footer">
-  <h1>ballence</h1>
+  <h1><span>ballence</span></h1>
 
   <menu class="navigation">
-    <a [href]="isHome? '/products': '/' "><li>{{isHome? 'all Products' : 'Home'}}</li></a>
-    <li (click)="onClick('#news')">{{isHome? 'news' : 'new collection'}}</li>
-    <li (click)="onClick(0)">
+    <a class="links" [href]="isHome? '/products': '/' "><li>{{isHome? 'all Products' : 'Home'}}</li></a>
+    <li class="links" (click)="onClick('#news')">{{isHome? 'news' : 'new collection'}}</li>
+    <li class="links" (click)="onClick(0)">
 
       back to top
 

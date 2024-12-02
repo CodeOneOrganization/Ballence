@@ -9,14 +9,14 @@ import { LenisScrollService } from '../../services/LenisScrollService.service';
   standalone: true,
   imports: [ButtonComponent, MarqueeComponent],
   templateUrl: './hero.component.html',
-  styleUrls: ['./hero.component.scss'] 
+  styleUrls: ['./hero.component.scss']
 })
-export class HeroComponent implements AfterViewInit { 
+export class HeroComponent implements AfterViewInit {
 
-  constructor(private lenisScrollService: LenisScrollService) {}
+  constructor(private lenisScrollService: LenisScrollService) { }
 
   onEnterAnimation(): void {
-    
+    this.lenisScrollService.scrollTo(0, { immediate: true, force: true, duration: 0 })
     this.lenisScrollService.pauseLenis()
 
     const tl = gsap.timeline()
@@ -31,45 +31,47 @@ export class HeroComponent implements AfterViewInit {
       duration: 1.5,
     })
 
-    .to('.hero img', {
-      width: "100%",
-      height: "100%",      
-      ease: "power2.inOut",
-      duration: 1.5,
-    
-    }, '+=0.1')
+      .to('.hero img', {
+        width: "100%",
+        height: "100%",
+        ease: "power2.inOut",
+        duration: 1.5,
 
-    .to('.hero-marquee .marquee ', {
-      y: 0,
-      ease: "power2.inOut",
-      
-      duration: 2,
-    
-    }, '-=1.5')
+      }, '+=0.1')
 
-    .to('.hero-card ', {
-      y: 0,
-      ease: "power2.inOut",
-      duration: 2,
-  
-    }, '-=1.8')
+      .to('.hero-marquee .marquee ', {
+        y: 0,
+        ease: "power2.inOut",
 
-    .to('.hero-card-h3-span ', {
-      y: 0,
-      ease: "power2.inOut",
-      stagger: 0.2,
-      duration: 2,
+        duration: 2,
 
-      onComplete: ()=>{
-        tl.kill();
-        this.lenisScrollService.startLenis()
-      }
-      
-    }, '-=1.5');
+      }, '-=1.5')
+
+      .to('.hero-card ', {
+        y: 0,
+        ease: "power2.inOut",
+        duration: 2,
+
+      }, '-=1.8')
+
+      .to('.hero-card-h3-span ', {
+        y: 0,
+        ease: "power2.inOut",
+        stagger: 0.2,
+        duration: 2,
+
+        onComplete: () => {
+          tl.kill();
+          this.lenisScrollService.startLenis()
+        }
+
+      }, '-=1.5');
 
   }
 
   ngAfterViewInit(): void {
     this.onEnterAnimation();
   }
+
+ 
 }

@@ -33,43 +33,32 @@ export class AboutComponent implements AfterViewInit {
 
     //percorre as imagens selecionadas
     imageSliderRef.forEach((imageElement) => {
+      // window.addEventListener("scroll", () => {
+      //   const { x, y, width, height } = imageElement.getBoundingClientRect()
+      //   const x_ci = (width / 2) + x
+      //   const y_ci = (height / 2) + y
+      //   console.log("newCursorPositionX", x_ci)
+      //   console.log("newCursorPositionY", y_ci)
 
-      imageElement.addEventListener("mousemove", () => {
-
-      })
+      //   this.cursorService.setCursor({ x_ci, y_ci })
+      // })
 
       //evento de entrada
       imageElement.addEventListener("mouseenter", (e) => {
-
-        //url da imagem
         const imageSrc = String(imageElement.dataset["imageSrc"])
+        const imageHeight = Number(imageElement.dataset["imageHeight"])
+        console.log("imageHeight", imageHeight)
 
-        // pega a largura da tela e diminui pela distancia da imagem
-        const imageLeft = window.innerWidth - imageElement.offsetLeft
-        
-        console.log("🚀 ~ AboutComponent ~ imageElement.addEventListener ~ imageLeft:", imageLeft)
-       
-        //quase entendendo
-        const x_ci = (imageElement.clientWidth / 2) + imageLeft
-       
-        const y_ci = (imageElement.clientHeight / 2) + imageElement.scrollTop
+        const { x, y, width, height } = imageElement.getBoundingClientRect()
+        const x_ci = (width / 2) + x
+        const y_ci = (height / 2) + y
 
-        //onde o usuario passa o mouse
-        const x_c = e.clientX
-        const y_c = e.clientY
-
-        //variaveis
         this.isMouseEventMen = true;
         this.isMouseEvent = true
         this.image = imageSrc
 
-        //setando os valores do cursos
-        this.cursorService.setCursor({
-          x_c,
-          y_c,
-          x_ci,
-          y_ci
-        })
+
+        this.cursorService.setCursor({ x_ci, y_ci, height: imageHeight })
       })
 
       imageElement?.addEventListener('mouseleave', () => {

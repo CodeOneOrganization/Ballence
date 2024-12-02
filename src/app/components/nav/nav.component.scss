@@ -7,6 +7,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  pointer-events: none;
 }
 .nav-menu {
   list-style: none;
@@ -42,6 +44,9 @@
   transition-property: all;
   transition-duration: 0.8s;
   transition-timing-function: var(--animation-ease);
+  
+  pointer-events: all;
+  
   // transition-timing-function: var(--animation-ease));
 }
 
@@ -80,6 +85,7 @@
   transition-duration: 0.8s;
   transition-timing-function: var(--animation-ease);
 
+  pointer-events: all;
 }
 
 ::ng-deep body[data-theme-schema='green'] .nav-logo {
