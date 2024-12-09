@@ -24,4 +24,3 @@ export class IsHomePageService {
         });
     }
 }
-    // console.log("🚀 ~ IsHomePageService ~ isHomePage:", isHomePage)

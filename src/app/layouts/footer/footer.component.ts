@@ -58,7 +58,7 @@ export class FooterComponent implements OnInit, AfterViewInit {
     })
   }
 
-  protected onClick(link: any): void {
+  protected onClick(link: string | number): void {
     this.lenisScrollService.scrollTo(link)
   }
 

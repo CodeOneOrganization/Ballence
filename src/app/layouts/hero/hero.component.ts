@@ -11,12 +11,11 @@ import { LenisScrollService } from '../../services/LenisScrollService.service';
   templateUrl: './hero.component.html',
   styleUrls: ['./hero.component.scss']
 })
-export class HeroComponent implements AfterViewInit {
+export class HeroComponent implements AfterViewInit{
 
   constructor(private lenisScrollService: LenisScrollService) { }
 
   onEnterAnimation(): void {
-    this.lenisScrollService.scrollTo(0, { immediate: true, force: true, duration: 0 })
     this.lenisScrollService.pauseLenis()
 
     const tl = gsap.timeline()
