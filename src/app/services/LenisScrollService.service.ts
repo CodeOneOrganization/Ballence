@@ -21,8 +21,6 @@ export class LenisScrollService implements OnDestroy {
 
         this.lenis.on('scroll', ScrollTrigger.update)
 
-
-
     }
 
     ngOnDestroy(): void {

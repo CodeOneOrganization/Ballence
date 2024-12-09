@@ -70,17 +70,9 @@ export class NavComponent implements OnInit, AfterViewInit {
     console.log("service ElementsService", ElementsService)
   }
 
-  protected onClick(link: any): void {
+  protected onClick(link: string | number): void {
     this.lenisScrollService.scrollTo(link);
   }
 
-  private animateNavOnScroll(): void {
 
-    gsap.to('.nav h1', {
-      color: "var(--color-blue)",
-    })
-    gsap.to('.nav-menu li', {
-      color: "var(--color-blue)",
-    });
-  }
 }

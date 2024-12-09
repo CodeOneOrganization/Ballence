@@ -2,7 +2,6 @@
     overflow: hidden;
     position: relative;
     background-color: var(--color-blue);
-    height: 60.365vw;
 }
 .about p{
     color: var(--color-green);
@@ -14,7 +13,6 @@
 .about-marquee{
     margin-top: 13.854vw;
 }
-
 
 .about img{
     transition: filter 1.2s var(--animation-ease), transform 0.8s var(--animation-ease);
