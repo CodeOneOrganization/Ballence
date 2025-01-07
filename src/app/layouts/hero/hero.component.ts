@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 import { ButtonComponent } from "../../components/button/button.component";
 import { MarqueeComponent } from "../../components/marquee/marquee.component";
 import gsap from 'gsap';
@@ -11,12 +11,12 @@ import { LenisScrollService } from '../../services/LenisScrollService.service';
   templateUrl: './hero.component.html',
   styleUrls: ['./hero.component.scss']
 })
-export class HeroComponent implements AfterViewInit {
+export class HeroComponent implements AfterViewInit, OnDestroy {
 
   constructor(private lenisScrollService: LenisScrollService) { }
 
   onEnterAnimation(): void {
-    this.lenisScrollService.scrollTo(0, { immediate: true, force: true, duration: 0 })
+    this.lenisScrollService.scrollTo(".hero", { immediate: true, force: true, duration: 0 })
     this.lenisScrollService.pauseLenis()
 
     const tl = gsap.timeline()
@@ -73,5 +73,8 @@ export class HeroComponent implements AfterViewInit {
     this.onEnterAnimation();
   }
 
+  ngOnDestroy(): void {
+      this.lenisScrollService.scrollTo(0, {duration: 0, immediate: true, force: true})
+  }
  
 }

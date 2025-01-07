@@ -6,6 +6,8 @@ import gsap from "gsap";
 @Injectable({
     providedIn: 'root'
 })
+
+
 export class LenisScrollService implements OnDestroy {
 
     private lenis!: Lenis;
@@ -20,8 +22,7 @@ export class LenisScrollService implements OnDestroy {
         });
 
         this.lenis.on('scroll', ScrollTrigger.update)
-
-
+        this.lenis.scrollTo(0, {immediate: true, force: true, duration: 0})
 
     }
 
