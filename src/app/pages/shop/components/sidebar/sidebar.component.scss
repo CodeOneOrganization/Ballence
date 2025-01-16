@@ -1,0 +1,44 @@
+.sidebar{
+  width: 23.385vw;
+  height: 100%;
+  background-color: var(--color-blue);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.sidebar nav h4{
+  padding-top: 2.396vw;
+  font-weight: 900;
+  -webkit-text-stroke: 0.1vw;
+  letter-spacing: 0.2vw;
+}
+
+.brands h4{
+  font-weight: 900;
+  -webkit-text-stroke: 0.1vw;
+  letter-spacing: 0.2vw;
+  cursor: pointer;
+}
+
+.brands ul li img{
+  object-fit: cover;
+}
+
+.sizes ul li,
+.brands ul li{
+  cursor: pointer;
+  display: flex;
+  gap: 1.823vw;
+  align-items: center;
+  color: var(--color-green);
+}
+
+.sizes ul,
+.brands ul{
+  padding-top: 1.719vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1.042vw;
+}
