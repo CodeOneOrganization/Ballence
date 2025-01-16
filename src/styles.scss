@@ -35,7 +35,6 @@ nav {
 
 section {
     position: relative;
-
     padding-top: var(--section-padding);
     padding-inline: var(--container-padding);
 }
@@ -66,6 +65,7 @@ h3 {
     color: var(--color-blue);
 }
 
+h4,
 p {
     font-size: 1.042vw;
     letter-spacing: 2%;

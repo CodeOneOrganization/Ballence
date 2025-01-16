@@ -1,5 +1,14 @@
 <section class="news" id="news" #news>
   <h2 class="title blue">News</h2>
+
+  <article *ngIf="!Products" class="item">
+    <picture><img class="product_image" src="" alt=""></picture>
+    <div class="info">
+      <p class="name blue">xxxx</p>
+      <p class="price blue">€0000</p>
+    </div>
+  </article>
+
   <div class="wrapper" *ngFor="let item of Products">
 
     <article class="item">
