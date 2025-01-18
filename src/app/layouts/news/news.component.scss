@@ -1,62 +1,60 @@
-.news{
-    width: auto;
-    padding-bottom: 33px;
-    // height: 60.365vw;
+.news {
+  width: auto;
+  padding-bottom: 33px;
+  // height: 60.365vw;
 
-    background-color: var(--color-green);
-}
-
-.news .title {
-    
+  background-color: var(--color-green);
 }
 
 .news .wrapper {
-    white-space: nowrap;
-    overflow: hidden;
+  white-space: nowrap;
+  overflow: hidden;
 
-    cursor: grab;
+  cursor: grab;
 }
 
 .news .wrapper:active {
-    cursor: grabbing;
+  cursor: grabbing;
 }
 
-.news .wrapper .item {
-    display: inline-block;
-
+.item {
+  display: inline-block;
 }
 
-.news .wrapper .item picture {
-    display: block;
+.item picture {
+  display: block;
 
-    aspect-ratio: 466 / 845;
-    // height: 78vh;
-    width: calc((100vw - 2 * var(--container-padding)) / 4);
-    min-width: 300px;
+  aspect-ratio: 466 / 845;
+  // height: 78vh;
+  width: calc((100vw - 2 * var(--container-padding)) / 4);
+  min-width: 300px;
 
-    border: 1px solid var(--color-black);
+  border: 1px solid var(--color-black);
 }
 
+.product_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 // Removing border left from [2, n] elements form wrapper
 .news .wrapper .item:not(:nth-of-type(1)) picture {
-    border-left: 0;
+  border-left: 0;
 }
 
-.news .wrapper .item .info {
-    padding-inline: 51px;
-
+.item .info {
+  padding-inline: 51px;
 }
 
-.news .wrapper .item .name {
-    display: inline;
-    float: left;
-    font-size: 1em;
+.item .name {
+  display: inline;
+  float: left;
+  font-size: 1em;
 }
 
+.item .price {
+  display: inline;
+  float: right;
 
-.news .wrapper .item .price  {
-    display: inline;
-    float: right;
-
-    font-size: 1em;
+  font-size: 1em;
 }
