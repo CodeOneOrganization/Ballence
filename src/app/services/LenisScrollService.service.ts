@@ -1,7 +1,6 @@
 import { Injectable, OnDestroy } from "@angular/core";
 import Lenis, { ScrollToOptions } from "lenis";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import gsap from "gsap";
 
 @Injectable({
     providedIn: 'root'
@@ -14,9 +13,10 @@ export class LenisScrollService implements OnDestroy {
 
         this.lenis = new Lenis({
             autoRaf: true,
-            duration: 1.2,
+            duration: 2,
             autoResize: true,
-
+            touchMultiplier: 2,
+            
         });
 
         this.lenis.on('scroll', ScrollTrigger.update)

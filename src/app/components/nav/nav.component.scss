@@ -1,5 +1,6 @@
 .nav {
   position: fixed;
+  top: 0;
   z-index: 999;
   width: 100vw;
   height: 10.104vw;
@@ -10,6 +11,14 @@
 
   pointer-events: none;
 }
+
+.nav img{
+  cursor: pointer;
+  pointer-events: all;
+  width: 5vw;
+  object-fit: cover;
+}
+
 .nav-menu {
   list-style: none;
   display: flex;
