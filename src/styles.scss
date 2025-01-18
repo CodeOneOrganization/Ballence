@@ -23,6 +23,10 @@
 
     scroll-behavior: smooth;
 }
+html {
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
 
 ::-webkit-scrollbar{
     width: 0;
