@@ -13,12 +13,17 @@
     font-size: 1.042vw;
     color: var(--color-green);
     -webkit-text-stroke: 0.078vw;
+
+    transition: all .7s ease-in-out;
 }
 
 .button-component svg{
     margin-left: 0.781vw;
 }
 
+.content2{
+    transform: rotate(35deg) translateY(200%);
+}
 
 .content{
     height: 100%;

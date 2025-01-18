@@ -1,4 +1,8 @@
-<button (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()" class="button-component" (click)="onClick('#news')">
+<button class="button-component"
+ (mouseenter)="onMouseEnter()" 
+ (mouseleave)="onMouseLeave()" 
+ (click)="onClick('#news')"
+>
 
   <div class="content" #content1>
     <span #span1>se more</span>
@@ -11,7 +15,7 @@
 
   </div>
 
-  <div class="content" #content2>
+  <div class="content content2" #content2>
 
     <span #span2>se more</span>
 
