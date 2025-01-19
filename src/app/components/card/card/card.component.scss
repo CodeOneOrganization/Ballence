@@ -1,0 +1,30 @@
+.item {
+  display: inline-block;
+}
+
+.item picture {
+  display: block;
+
+  aspect-ratio: 466 / 845;
+  // height: 78vh;
+  width: calc((100vw - 2 * var(--container-padding)) / 4);
+  min-width: 300px;
+
+  border: 1px solid var(--color-black);
+}
+.item .info {
+  padding-inline: 51px;
+}
+
+.item .name {
+  display: inline;
+  float: left;
+  font-size: 1em;
+}
+
+.item .price {
+  display: inline;
+  float: right;
+
+  font-size: 1em;
+}

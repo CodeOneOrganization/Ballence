@@ -1,23 +1,11 @@
 <section class="news" id="news" #news>
   <h2 class="title blue">News</h2>
 
-  <article *ngIf="!Products" class="item">
-    <picture><img class="product_image" src="" alt=""></picture>
-    <div class="info">
-      <p class="name blue">xxxx</p>
-      <p class="price blue">€0000</p>
-    </div>
-  </article>
+  <div class="fakeCards" *ngIf="!Products">
+    <app-fake-cards></app-fake-cards>
+  </div>
 
   <div class="wrapper" *ngFor="let item of Products">
-
-    <article class="item">
-      <picture><img class="product_image" src={{item.photo[1]}} alt=""></picture>
-      <div class="info">
-        <p class="name blue">{{item.name}}</p>
-        <p class="price blue">€{{item.price}}</p>
-      </div>
-    </article>
-
+    <app-card src={{item.photo[1]}} alt={{item.photo[0]}} price={{item.price}} name={{item.name}}></app-card>
   </div>
 </section>
