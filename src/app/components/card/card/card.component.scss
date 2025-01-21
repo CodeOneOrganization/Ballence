@@ -2,6 +2,13 @@
   display: inline-block;
 }
 
+.product_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+}
+
 .item picture {
   display: block;
 
@@ -10,7 +17,6 @@
   width: calc((100vw - 2 * var(--container-padding)) / 4);
   min-width: 300px;
 
-  border: 1px solid var(--color-black);
 }
 .item .info {
   padding-inline: 51px;
