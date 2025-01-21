@@ -7,6 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductService } from '../../services/Products.service';
 import { IProducts } from '../../common/Product.model';
 import { CommonModule } from '@angular/common';
+import { CardComponent } from "../../components/card/card/card.component";
+import { FakeCardsComponent } from "../../components/FakeCards/fake-cards/fake-cards.component";
 
 export enum PageThemeEnum {
   GREEN = "green",
@@ -19,8 +21,10 @@ export enum PageThemeEnum {
   standalone: true,
   imports: [
     HttpClientModule,
-    CommonModule
-  ],
+    CommonModule,
+    CardComponent,
+    FakeCardsComponent
+],
   providers: [ProductService, ElementsService],
   templateUrl: './news.component.html',
   styleUrl: './news.component.scss'

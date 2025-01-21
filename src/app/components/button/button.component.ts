@@ -18,35 +18,32 @@ export class ButtonComponent implements OnDestroy{
 
   onMouseEnter(): void {
     gsap.to(this.content1Ref.nativeElement, {
-      y: "-200%",
-      rotate: "-15deg",
+      y: "-100%",
       duration: .7,
       ease: "power2.inOut"
     })
 
     gsap.to(this.content2Ref.nativeElement, {
       y: "-100%",
-      rotate: 0,
-      x: 0,
       duration: .7,
       ease: "power2.inOut"
     })
+    
   }
 
   onMouseLeave(): void {
     gsap.to(this.content1Ref.nativeElement, {
       y: "0%",
-      rotate: 0,
       duration: 0.5,
       ease: "power2.inOut"
     })
 
     gsap.to(this.content2Ref.nativeElement, {
-      y: "200%",
-      rotate: "25deg",
+      y: "100%",
       duration: 0.5,
       ease: "power2.inOut"
     })
+    
   }
 
   onClick(link: string | number): void {

@@ -8,4 +8,5 @@ export interface IProducts{
   brand: string;
   type: string;
   color: string;
+  size: string;
 }
