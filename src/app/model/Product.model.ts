@@ -1,3 +1,13 @@
+enum size{
+  xxs ='xxs',
+  xs = 'xs',
+  s = 's',
+  m ='m',
+  l ='l',
+  xl = 'xl',
+  xxl = 'xxl'
+}
+
 export interface IProducts{
   id: string;
   name: string;
@@ -8,5 +18,5 @@ export interface IProducts{
   brand: string;
   type: string;
   color: string;
-  size: string;
+  size: size;
 }

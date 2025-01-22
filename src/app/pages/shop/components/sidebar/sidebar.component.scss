@@ -1,4 +1,4 @@
-.sidebar{
+.sidebar {
   width: 23.385vw;
   height: 100%;
   background-color: var(--color-blue);
@@ -8,37 +8,49 @@
   left: 0;
 }
 
-.sidebar nav h4{
+.sidebar nav {
+  padding-inline: 0;
+}
+
+.sidebar nav h4 {
+  padding-inline: var(--container-padding);
   padding-top: 2.396vw;
   font-weight: 900;
   -webkit-text-stroke: 0.1vw;
   letter-spacing: 0.2vw;
 }
 
-.brands h4{
+.sizes h4,
+.brands h4 {
   font-weight: 900;
   -webkit-text-stroke: 0.1vw;
   letter-spacing: 0.2vw;
   cursor: pointer;
 }
 
-.brands ul li img{
+.brands ul li img {
   object-fit: cover;
 }
 
 .sizes ul li,
-.brands ul li{
+.brands ul li {
+  padding-inline: var(--container-padding);
   cursor: pointer;
   display: flex;
   gap: 1.823vw;
   align-items: center;
   color: var(--color-green);
+  height: 2.656vw;
+
 }
 
 .sizes ul,
-.brands ul{
+.brands ul {
   padding-top: 1.719vw;
-  display: flex;
-  flex-direction: column;
-  gap: 1.042vw;
+
+}
+
+.sizes ul li:hover,
+.brands ul li:hover {
+  background-color: var(--color-dark-blue);
 }

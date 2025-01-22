@@ -4,8 +4,8 @@ import { ElementsService } from '../../services/ElementsService.service'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import { HttpClientModule } from '@angular/common/http'
-import { ProductService } from '../../services/Products.service'
-import { IProducts } from '../../common/Product.model'
+import { ProductService } from '../../services/products.service'
+import { IProducts } from '../../model/Product.model'
 import { CommonModule } from '@angular/common'
 import { CardComponent } from '../../components/card/card/card.component'
 
@@ -13,7 +13,6 @@ export enum PageThemeEnum {
   GREEN = 'green',
   BLUE = 'blue',
 }
-
 
 @Component({
   selector: 'app-news',
@@ -32,7 +31,7 @@ export class NewsComponent implements AfterViewInit, OnDestroy, OnInit {
 
   private scrollTrigger!: globalThis.ScrollTrigger
   protected Products!: IProducts[]
-  protected fakeArray: number[] = [1,2,3,4]
+  protected fakeArray: number[] = [1,2,3,4,5,6,7,8]
 
   constructor(
     private elementsService: ElementsService,
