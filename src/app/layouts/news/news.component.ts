@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, OnDestroy, OnInit } from '@angular/core'
+import { Component, AfterViewInit, OnDestroy, OnInit, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
 import { ElementsService } from '../../services/ElementsService.service'
 
 import gsap from 'gsap'
@@ -22,6 +22,7 @@ export enum PageThemeEnum {
     CommonModule,
     CardComponent
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [ProductService, ElementsService],
   templateUrl: './news.component.html',
   styleUrl: './news.component.scss',
@@ -30,7 +31,7 @@ export class NewsComponent implements AfterViewInit, OnDestroy, OnInit {
 
   private scrollTrigger!: globalThis.ScrollTrigger
   protected Products!: IProducts[]
-  protected fakeArray: number[] = [1,2,3,4]
+  protected fakeArray: number[] = [1,2,3,4,5,6,7,8]
 
   constructor(
     private elementsService: ElementsService,

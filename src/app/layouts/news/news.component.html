@@ -1,17 +1,16 @@
 <section class="news" id="news" #news>
   <h2 class="title blue">News</h2>
 
-  <ng-container *ngIf="!Products || Products.length <= 0">
-    <div class="fakeCards">
-        <div class="item" *ngFor="let item of fakeArray">
-          <app-card src="/jacketFake.png" alt="card not found" price="000000" name="xxxxx" [isFake]="true"></app-card>
-        </div>
-    </div>
-  </ng-container>
+  <swiper-container slides-per-view="4" free-mode="true" grab-cursor="true" *ngIf="!Products || Products.length <= 0">
+    <swiper-slide lazy="true" class="item" *ngFor="let item of fakeArray">
+      <app-card src="/jacketFake.png" alt="card not found" price="000000" name="xxxxx" [isFake]="true"></app-card>
+    </swiper-slide>
+  </swiper-container>
 
-  <div class="wrapper">
-    <div class="item" *ngFor="let item of Products">
+
+  <swiper-container slides-per-view="4" free-mode="true" grab-cursor="true">
+    <swiper-slide lazy="true" class="item" *ngFor="let item of Products">
       <app-card src={{item.photo[1]}} alt={{item.photo[0]}} price={{item.price}} name={{item.name}} [isFake]="false"></app-card>
-    </div>
-  </div>
+    </swiper-slide>
+  </swiper-container>
 </section>
