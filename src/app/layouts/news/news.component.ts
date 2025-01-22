@@ -5,7 +5,7 @@ import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import { HttpClientModule } from '@angular/common/http'
 import { ProductService } from '../../services/Products.service'
-import { IProducts } from '../../common/Product.model'
+import { IProducts } from '../../model/Product.model'
 import { CommonModule } from '@angular/common'
 import { CardComponent } from '../../components/card/card/card.component'
 

@@ -10,7 +10,7 @@ export class ElementsService {
   public setNewsElement(element: HTMLDivElement) {
     this.newsElement = element
   }
-
+  
   public getNewsElement(): HTMLDivElement | null {
     return this.newsElement
   }
