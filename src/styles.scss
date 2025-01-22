@@ -7,6 +7,7 @@
     --color-black: #000;
     --color-green: #B6E02A;
     --color-blue: #0b5294;
+    --color-dark-blue: #0A4780;
 
     --animation-ease: cubic-bezier(0.5, 0.0, 0.0, 1.0);
 }
@@ -34,7 +35,7 @@ html {
 }
 
 nav {
-    padding-inline: var(--container-padding);
+    padding-inline: var(--container-padding);    
 }
 
 section {
