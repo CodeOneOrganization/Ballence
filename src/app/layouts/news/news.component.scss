@@ -6,26 +6,25 @@
   background-color: var(--color-green);
 }
 
-.news .wrapper {
-  display: flex;
-  white-space: nowrap;
-  overflow: hidden;
+// .news .wrapper {
+//   display: flex;
+//   white-space: nowrap;
+//   overflow: hidden;
 
-  cursor: grab;
-}
+//   cursor: grab;
+// }
 
-.news .wrapper:active {
-  cursor: grabbing;
-}
+// .news .wrapper:active {
+//   cursor: grabbing;
+// }
 
 .fakeCards{
   display: flex;
 }
 
 .item{
-  flex-shrink: 0;
   border: 1px solid var(--color-black);
-  // background-color: red;
+
 }
 .item:not(:nth-of-type(1)) {
   border-left: 0;
