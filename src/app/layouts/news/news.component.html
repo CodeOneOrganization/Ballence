@@ -2,11 +2,11 @@
   <h2 class="title blue">News</h2>
 
   <ng-container *ngIf="!Products">
-    <div class="fakeCards">
-        <div class="item" *ngFor="let item of fakeArray">
+    <swiper-container loop="true">
+        <swiper-slide class="item" *ngFor="let item of fakeArray">
           <app-card src="/jacketFake.png" alt="card not found" price="000000" name="xxxxx"></app-card>
-        </div>
-    </div>
+        </swiper-slide>
+    </swiper-container>
   </ng-container>
 
   <div class="wrapper" *ngFor="let item of Products">

@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, OnDestroy, OnInit } from '@angular/core'
+import { Component, AfterViewInit, OnDestroy, OnInit, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
 import { ElementsService } from '../../services/ElementsService.service'
 
 import gsap from 'gsap'
@@ -14,6 +14,7 @@ export enum PageThemeEnum {
   BLUE = 'blue',
 }
 
+
 @Component({
   selector: 'app-news',
   standalone: true,
@@ -22,6 +23,7 @@ export enum PageThemeEnum {
     CommonModule,
     CardComponent
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [ProductService, ElementsService],
   templateUrl: './news.component.html',
   styleUrl: './news.component.scss',
