@@ -21,23 +21,21 @@ export enum PageThemeEnum {
     HttpClientModule,
     CommonModule,
     SlideComponent
-],
+  ],
   providers: [ProductService, ElementsService],
   templateUrl: './news.component.html',
   styleUrl: './news.component.scss',
 })
-export class NewsComponent implements AfterViewInit, OnDestroy, OnInit {
+export class NewsComponent implements AfterViewInit, OnDestroy {
 
   private scrollTrigger!: globalThis.ScrollTrigger
   protected Products!: IProducts[]
-  protected fakeArray: number[] = [1,2,3,4,5,6,7,8]
+  protected fakeArray: number[] = [1, 2, 3, 4, 5, 6, 7, 8]
 
   constructor(
     private elementsService: ElementsService,
     private productService: ProductService
-  ) {}
-
-  ngOnInit(): void {
+  ) {
     this.productService.getAllProducts().subscribe((data) => {
       this.Products = data
       console.log(this.Products)
@@ -52,10 +50,8 @@ export class NewsComponent implements AfterViewInit, OnDestroy, OnInit {
     this.scrollTrigger.kill()
   }
 
+  navThemeChange() {
 
-
-  navThemeChange(){
-    
     const news = document.querySelector<HTMLDivElement>('.news')!
     this.elementsService.setNewsElement(news)
 

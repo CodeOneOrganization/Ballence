@@ -1,12 +1,12 @@
 .products{
   background-color: var(--color-green);
   width: 100vw;
-  height: 100dvh;
-  padding: 0;
+
+  padding-top: 0;
+  padding-inline: calc(var(--container-padding) + 2vw);
 }
 
 
 .jackets{
   padding-top: 2.396vw;
-  margin-left: 24.844vw;
 }
