@@ -1,13 +1,13 @@
-import { Component, AfterViewInit, OnDestroy, OnInit, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
+import { Component, AfterViewInit, OnDestroy, OnInit } from '@angular/core'
 import { ElementsService } from '../../services/ElementsService.service'
 
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import { HttpClientModule } from '@angular/common/http'
-import { ProductService } from '../../services/products.service'
+import { ProductService } from '../../services/Products.service'
 import { IProducts } from '../../model/Product.model'
 import { CommonModule } from '@angular/common'
-import { CardComponent } from '../../components/card/card/card.component'
+import { SlideComponent } from "../../components/slide/slide.component";
 
 export enum PageThemeEnum {
   GREEN = 'green',
@@ -20,9 +20,8 @@ export enum PageThemeEnum {
   imports: [
     HttpClientModule,
     CommonModule,
-    CardComponent
-  ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    SlideComponent
+],
   providers: [ProductService, ElementsService],
   templateUrl: './news.component.html',
   styleUrl: './news.component.scss',
