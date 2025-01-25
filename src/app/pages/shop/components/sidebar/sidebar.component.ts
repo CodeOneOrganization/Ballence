@@ -10,11 +10,11 @@ import gsap from 'gsap';
 })
 export class SidebarComponent {
    @ViewChild('aside') aside!: ElementRef
-    private isOpen: boolean = false
+    private isOpen!: boolean
 
    openFilter(){
     gsap.to(this.aside.nativeElement,{
-      x: this.isOpen ? "0%" : "-90%",
+      x: this.isOpen ? "-90%" : "0%",
       duration: 1,
       ease: 'power2.inOut',
     })
