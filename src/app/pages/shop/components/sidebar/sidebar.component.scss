@@ -1,11 +1,20 @@
 .sidebar {
+  cursor: grab;
   width: 23.385vw;
   height: 100%;
   background-color: var(--color-blue);
-
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  z-index: 999;
+
+  transform: translateX(-90%);
+}
+
+.sidebar_button{
+  cursor: pointer;
+  position: absolute;
+  right: 0;
 }
 
 .sidebar nav {
