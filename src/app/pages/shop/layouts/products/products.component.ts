@@ -13,19 +13,30 @@ import { HttpClientModule } from '@angular/common/http';
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss'
 })
-export class ProductsComponent implements OnInit {
+export class ProductsComponent {
   
   protected Products!: IProducts[]
-    constructor(
-      private productService: ProductService
-    ) {
+
+  constructor(private productService: ProductService) {
+      
       this.productService.getAllProducts().subscribe((data) => {
         this.Products = data
         console.log(this.Products)
       })
+
     }
 
-  ngOnInit(): void {
-      
+  getItem(type: string){
+
+    const item = this.Products.filter((x) => x.type == `${type}`)
+
+    if(item){
+      return item
+    }
+
+    return []
+
   }
+
+  
 }

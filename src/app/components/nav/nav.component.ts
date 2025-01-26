@@ -6,6 +6,7 @@ import { ElementsService } from '../../services/ElementsService.service';
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { CommonModule } from '@angular/common';
 
 export enum PageThemeEnum {
   GREEN = "green",
@@ -17,7 +18,7 @@ export enum PageThemeEnum {
 @Component({
   selector: 'app-nav',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.scss'
 })

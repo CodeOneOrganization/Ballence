@@ -10,15 +10,30 @@ import gsap from 'gsap';
 })
 export class SidebarComponent {
    @ViewChild('aside') aside!: ElementRef
+   @ViewChild('filters') filters!: ElementRef
+
     private isOpen!: boolean
 
    openFilter(){
+
+    gsap.to(this.filters.nativeElement,{
+      paddingLeft: this.isOpen ? '1.45vw' : '15vw',
+      duration: 1,
+      ease: 'power2.inOut'
+    });
+
     gsap.to(this.aside.nativeElement,{
-      x: this.isOpen ? "-90%" : "0%",
+      x: this.isOpen ? "-100%" : "0%",
       duration: 1,
       ease: 'power2.inOut',
     })
     this.setIsOpen()
+
+    gsap.to(this.filters.nativeElement,{
+      color: this.isOpen ? '#B6E02A' : '#0b5294', 
+      duration: 1,
+      ease: "power2.inOut"
+    })
    }
 
    setIsOpen(){

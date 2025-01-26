@@ -1,9 +1,16 @@
 <section class="products">
   <div class="container">
     <app-sidebar></app-sidebar>
-    <div class="jackets">
+    
+    <div class="products jackets">
       <h2 class="blue">jackets</h2>
-      <app-slide [Products]="Products"></app-slide>
+      <app-slide [Products]="getItem('jacket')"></app-slide>
     </div>
+
+    <div class="products bags">
+      <h2 class="blue">bags</h2>
+      <app-slide [Products]="getItem('bag')"></app-slide>
+    </div>
+
   </div>
 </section>
