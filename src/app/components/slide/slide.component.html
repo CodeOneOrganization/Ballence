@@ -1,7 +1,7 @@
   <app-loading  *ngIf="!Products || Products.length <= 0  || Products == undefined"></app-loading>
 
 
-  <swiper-container slides-per-view="4" free-mode="true">
+  <swiper-container slides-per-view="4" free-mode="true" >
     <swiper-slide lazy="true" class="item" *ngFor="let item of Products">
       <app-card src={{item.photo[1]}} alt={{item.photo[0]}} price={{item.price}} name={{item.name}} [isFake]="false"></app-card>
     </swiper-slide>

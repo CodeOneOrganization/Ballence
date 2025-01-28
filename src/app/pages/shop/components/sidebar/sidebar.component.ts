@@ -35,6 +35,14 @@ export class SidebarComponent {
       duration: 1,
       ease: "power2.inOut"
     })
+
+    gsap.to(".line",{
+      width: this.isOpen ? "100vw" : '0vw',
+      duration: 1,
+      ease: 'power2.inOut',
+      delay:  .5  
+    })
+
    }
 
    setIsOpen(){

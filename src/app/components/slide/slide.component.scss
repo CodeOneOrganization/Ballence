@@ -5,3 +5,11 @@
 .item:not(:nth-of-type(1)) {
   border-left: 0;
 }
+
+swiper-container{
+  cursor: grab;
+}
+
+swiper-container:active{
+  cursor: grabbing;
+}
