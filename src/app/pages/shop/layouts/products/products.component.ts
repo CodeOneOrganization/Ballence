@@ -28,7 +28,7 @@ export class ProductsComponent {
 
   getItem(type: string){
 
-    const item = this.Products.filter((x) => x.type == `${type}`)
+    const item = this.Products?.filter((x) => x.type == `${type}`)
 
     if(item){
       return item
