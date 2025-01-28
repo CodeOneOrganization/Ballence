@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, CUSTOM_ELEMENTS_SCHEMA, Input, OnInit } from '@angular/core';
 import { IProducts } from '../../model/Product.model';
 import { CardComponent } from '../card/card/card.component';
+import { LoadingComponent } from "../loading/loading.component";
 
 @Component({
   selector: 'app-slide',
   standalone: true,
-  imports: [CommonModule, CardComponent],
+  imports: [CommonModule, CardComponent, LoadingComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './slide.component.html',
   styleUrl: './slide.component.scss'
