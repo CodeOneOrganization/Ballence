@@ -1,8 +1,4 @@
-  <swiper-container slides-per-view="4" free-mode="true" grab-cursor="true" *ngIf="!Products || Products.length <= 0  || Products == undefined">
-    <swiper-slide lazy="true" class="item" *ngFor="let item of fakeArray">
-      <app-card src="/jacketFake.png" alt="card not found" price="000000" name="xxxxx" [isFake]="true"></app-card>
-    </swiper-slide>
-  </swiper-container>
+<app-loading  *ngIf="!Products || Products.length <= 0  || Products == undefined"></app-loading>
 
 
   <swiper-container slides-per-view="4" free-mode="true">
