@@ -29,17 +29,15 @@ export enum PageThemeEnum {
 export class NewsComponent implements AfterViewInit, OnDestroy {
 
   private scrollTrigger!: globalThis.ScrollTrigger
-  protected Products!: IProducts[]
   protected fakeArray: number[] = [1, 2, 3, 4, 5, 6, 7, 8]
 
   constructor(
     private elementsService: ElementsService,
     private productService: ProductService
-  ) {
-    this.productService.getAllProducts().subscribe((data) => {
-      this.Products = data
-      console.log(this.Products)
-    })
+  ) {}
+
+  getAllItem(){
+    return this.productService.getAllProducts()
   }
 
   ngAfterViewInit(): void {

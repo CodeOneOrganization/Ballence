@@ -5,10 +5,19 @@ import { IProducts } from "../model/Product.model";
 @Injectable({providedIn: 'root'})
 export class ProductService{
 
-  constructor(private httpClient: HttpClient){}
+  public Products!: IProducts[]
 
-  getAllProducts(){
-   return this.httpClient.get<IProducts[]>("http://localhost:3000/products");
+  constructor(private httpClient: HttpClient){
+    this.httpClient.get<IProducts[]>("http://localhost:3000/products").subscribe((data) =>{
+      this.Products = data
+    })
   }
 
+  getAllProducts(){
+   return this.Products
+  }
+
+  getFiltredProducts(type: string){
+    return this.Products?.filter((x) => x.type == `${type}`)
+  }
 }

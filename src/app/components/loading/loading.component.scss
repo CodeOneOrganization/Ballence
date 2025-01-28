@@ -34,9 +34,12 @@
 @keyframes opacity {
   0%{
     opacity: 100%;
+    transform: translateY(0%);
   }
   50%{
     opacity: 50%;
+    transform: translateY(10%);
+
   }
 
 }
