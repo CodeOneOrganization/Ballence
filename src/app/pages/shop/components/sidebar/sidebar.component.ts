@@ -9,12 +9,13 @@ import gsap from 'gsap';
   styleUrl: './sidebar.component.scss'
 })
 export class SidebarComponent {
+  
    @ViewChild('aside') aside!: ElementRef
    @ViewChild('filters') filters!: ElementRef
 
     private isOpen!: boolean
 
-   openFilter(){
+   toggleFilter(){
 
     gsap.to(this.filters.nativeElement,{
       paddingLeft: this.isOpen ? '1.45vw' : '15vw',

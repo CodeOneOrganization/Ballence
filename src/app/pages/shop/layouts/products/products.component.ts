@@ -14,28 +14,11 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrl: './products.component.scss'
 })
 export class ProductsComponent {
-  
-  protected Products!: IProducts[]
 
-  constructor(private productService: ProductService) {
-      
-      this.productService.getAllProducts().subscribe((data) => {
-        this.Products = data
-        console.log(this.Products)
-      })
+  constructor(private productService: ProductService) {}
 
-    }
-
-  getItem(type: string){
-
-    const item = this.Products?.filter((x) => x.type == `${type}`)
-
-    if(item){
-      return item
-    }
-
-    return []
-
+  getFiltred(type: string){
+   return this.productService.getFiltredProducts(`${type}`)
   }
 
   
