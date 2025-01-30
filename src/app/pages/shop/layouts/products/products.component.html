@@ -1,16 +1,17 @@
-<section class="products">
+<!-- <section class="products">
   <div class="container">
     <app-sidebar></app-sidebar>
     
-    <div class="slides jackets">
+    <div class="products-section jackets">
       <h2 class="blue">jackets</h2>
-      <app-slide [Products]="getFiltred('jacket')"></app-slide>
-    </div>
+      <app-loading  *ngIf="!Products.jackets || Products.jackets.length <= 0  || Products.jackets == undefined"></app-loading>
+      <div class="item" *ngFor="let item of Products.jackets"></div>
+    </div>a
 
-    <div class="slides bags">
+    <div class="products-section bags">
       <h2 class="blue">bags</h2>
       <app-slide [Products]="getFiltred('bag')"></app-slide>
     </div>
 
   </div>
-</section>
+</section> -->
