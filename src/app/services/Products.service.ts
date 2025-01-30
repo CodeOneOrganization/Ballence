@@ -1,33 +1,28 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { BehaviorSubject, filter, map, Observable, tap } from "rxjs";
 import { IProducts } from "../model/Product.model";
-import { BehaviorSubject, map, Observable, tap } from "rxjs";
 
-@Injectable({providedIn: 'root'})
-export class ProductService{
+@Injectable({ providedIn: "root" })
+export class ProductService {
 
-  private productsSubject = new BehaviorSubject<IProducts[]>([]);
-  private apiUrl = 'http://localhost:3000/products'
-
-  constructor(private httpClient: HttpClient){
-    this.httpClient.get<IProducts[]>(this.apiUrl).pipe(
-      tap((data) => this.productsSubject.next(data))
-      ).subscribe();
-  }
+  constructor(private httpClient: HttpClient) {}
+  private productsSubject = new BehaviorSubject<IProducts[] | null>(null);
 
   loadProducts(): void {
-   
+    this.httpClient.get<IProducts[]>("http://localhost:3000/products").pipe(
+      tap((products) => this.productsSubject.next(products))
+    ).subscribe();
   }
 
-  getAllProducts(): Observable<IProducts[]> {
-    console.log(this.productsSubject.asObservable())
+  getAllProducts(): Observable<IProducts[] | null>{
     return this.productsSubject.asObservable();
   }
 
   getFiltredProducts(type: string): Observable<IProducts[]> {
     return this.productsSubject.asObservable().pipe(
-    map((products) => products?.filter((x) => x.type === type) || [])
+      map((products) => products ? products.filter((product) => product.type === type) : [])
     );
   }
-
+  
 }

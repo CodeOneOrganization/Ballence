@@ -6,11 +6,13 @@ import { SlideComponent } from "../../../../components/slide/slide.component";
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { LoadingComponent } from "../../../../components/loading/loading.component";
+import { Observable } from 'rxjs';
+import { CardComponent } from "../../../../components/card/card.component";
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [SidebarComponent, SlideComponent, HttpClientModule, CommonModule, LoadingComponent],
+  imports: [SidebarComponent, HttpClientModule, CommonModule, LoadingComponent, CardComponent],
   providers: [ProductService],
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss'
@@ -18,14 +20,12 @@ import { LoadingComponent } from "../../../../components/loading/loading.compone
 export class ProductsComponent implements OnInit{
 
   constructor(private productService: ProductService) {}
-  
-  protected Products: { jackets?: any[] } = {};
+  protected Jackets$!: Observable<IProducts[]>;
 
-  
-  async ngOnInit() {
-    console.log(this.Products.jackets)
-    // this.Products.jackets = this.productService.getFiltredProducts('jacket')
+  ngOnInit(): void {
+    this.productService.loadProducts();
+    this.Jackets$ = this.productService.getFiltredProducts('jacket'); 
+
+    
   }
-
-  
 }

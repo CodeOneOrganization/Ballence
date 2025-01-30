@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, CUSTOM_ELEMENTS_SCHEMA, Input, OnInit } from '@angular/core';
 import { IProducts } from '../../model/Product.model';
-import { CardComponent } from '../card/card/card.component';
+import { CardComponent } from '../card/card.component';
 import { LoadingComponent } from "../loading/loading.component";
 import { Observable } from 'rxjs';
 
@@ -15,7 +15,7 @@ import { Observable } from 'rxjs';
 })
 export class SlideComponent implements OnInit{
 
-  @Input() Products!: any
+  @Input() Products!: IProducts[] | null
   protected fakeArray: number[] = [1,2,3,4,5,6,7,8]
 
   teste(){
