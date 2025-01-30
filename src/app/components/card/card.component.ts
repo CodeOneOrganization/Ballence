@@ -13,6 +13,5 @@ export class CardComponent {
   @Input() alt!: string
   @Input() name!: string
   @Input() price!: string
-  @Input() isFake!: boolean
 
 }

@@ -9,6 +9,7 @@ import { AboutComponent } from "./layouts/about/about.component";
 import { LenisScrollService } from './services/LenisScrollService.service';
 import { CommonModule } from '@angular/common';
 import { IsHomePageService } from './services/IsHomePageService.service';
+import { ProductService } from './services/Products.service';
 
 @Component({
   selector: 'app-root',
@@ -31,10 +32,12 @@ export class AppComponent implements OnInit{
   isHome!: boolean;  
 
 
-  constructor(private lenisScrollService: LenisScrollService, private isHomePageService: IsHomePageService){}
+  constructor(
+    private lenisScrollService: LenisScrollService, 
+    private isHomePageService: IsHomePageService,
+  ){}
 
   ngOnInit(): void {
-
     this.isHomePageService.verify().subscribe((value)=>{
       this.isHome = value;
     })

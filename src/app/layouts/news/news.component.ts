@@ -26,18 +26,20 @@ export enum PageThemeEnum {
   templateUrl: './news.component.html',
   styleUrl: './news.component.scss',
 })
-export class NewsComponent implements AfterViewInit, OnDestroy {
+export class NewsComponent implements AfterViewInit, OnDestroy, OnInit {
 
   private scrollTrigger!: globalThis.ScrollTrigger
   protected fakeArray: number[] = [1, 2, 3, 4, 5, 6, 7, 8]
+  protected Products!: IProducts[] | null
 
   constructor(
     private elementsService: ElementsService,
     private productService: ProductService
   ) {}
 
-  getAllItem(){
-    return this.productService.getAllProducts()
+  ngOnInit(): void {
+    this.productService.loadProducts()
+    this.productService.getAllProducts().subscribe((data) => {this.Products = data})
   }
 
   ngAfterViewInit(): void {
