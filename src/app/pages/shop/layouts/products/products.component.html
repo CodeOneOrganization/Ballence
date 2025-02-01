@@ -14,7 +14,12 @@
 
     <div class="products-section bags">
       <h2 class="blue">bags</h2>
-      <!-- <app-slide [Products]="getFiltred('bag')"></app-slide> -->
+      <app-loading *ngIf="(Bags$ | async)?.length === 0"></app-loading>
+      <div class="wrapper">
+        <div class="item" *ngFor="let item of (Bags$ | async)">
+          <app-card src={{item.photo[1]}} alt={{item.photo[0]}} price={{item.price}} name={{item.name}}></app-card>
+        </div>
+      </div>
     </div>
 
   </div>
