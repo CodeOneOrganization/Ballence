@@ -21,11 +21,12 @@ export class ProductsComponent implements OnInit{
 
   constructor(private productService: ProductService) {}
   protected Jackets$!: Observable<IProducts[]>;
+  protected Bags$!: Observable<IProducts[]>;
 
   ngOnInit(): void {
     this.productService.loadProducts();
     this.Jackets$ = this.productService.getFiltredProducts('jacket'); 
-
+    this.Bags$ = this.productService.getFiltredProducts('bag'); 
     
   }
 }
