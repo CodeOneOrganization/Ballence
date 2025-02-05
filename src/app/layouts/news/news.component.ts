@@ -4,7 +4,7 @@ import { ElementsService } from '../../services/ElementsService.service'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import { HttpClientModule } from '@angular/common/http'
-import { ProductService } from '../../services/Products.service'
+import { ProductService } from '../../services/Product.service'
 import { IProducts } from '../../model/Product.model'
 import { CommonModule } from '@angular/common'
 import { SlideComponent } from "../../components/slide/slide.component";
@@ -38,11 +38,13 @@ export class NewsComponent implements AfterViewInit, OnDestroy, OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.productService.loadProducts()
-    this.productService.getAllProducts().subscribe((data) => {this.Products = data})
+   
   }
 
   ngAfterViewInit(): void {
+    this.productService.loadProducts()
+    this.productService.getAllProducts().subscribe((data) => {this.Products = data})
+    
     this.navThemeChange()
   }
 

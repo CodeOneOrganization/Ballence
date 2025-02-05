@@ -19,6 +19,12 @@ export class ProductService {
     return this.productsSubject.asObservable();
   }
 
+  getProductById(id: string){
+    return this.productsSubject.pipe(
+      tap((products) => products?.filter((product) => product.id == id))
+    )
+  }
+
   getFiltredProducts(type: string): Observable<IProducts[]> {
     return this.productsSubject.asObservable().pipe(
       map((products) => products ? products.filter((product) => product.type === type) : [])
