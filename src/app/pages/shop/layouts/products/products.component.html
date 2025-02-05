@@ -7,7 +7,7 @@
       <app-loading *ngIf="(Jackets$ | async)?.length === 0"></app-loading>
       <div class="wrapper">
         <div class="item" *ngFor="let item of (Jackets$ | async)">
-          <app-card src={{item.photo[1]}} alt={{item.photo[0]}} price={{item.price}} name={{item.name}}></app-card>
+          <app-card (click)="getChoice(item.id)" src={{item.photo[1]}} alt={{item.photo[0]}} price={{item.price}} name={{item.name}}></app-card>
         </div>
       </div>
     </div>

@@ -9,7 +9,7 @@ import { AboutComponent } from "./layouts/about/about.component";
 import { LenisScrollService } from './services/LenisScrollService.service';
 import { CommonModule } from '@angular/common';
 import { IsHomePageService } from './services/IsHomePageService.service';
-import { ProductService } from './services/Products.service';
+import { ProductService } from './services/Product.service';
 
 @Component({
   selector: 'app-root',
