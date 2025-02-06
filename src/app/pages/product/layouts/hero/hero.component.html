@@ -1,0 +1,9 @@
+<section class="hero">
+  <app-loading *ngIf="Choice?.length === 0"></app-loading>
+  <div *ngFor="let item of Choice">
+    <div class="images">
+      <img src={{item.photo[1]}} alt={{item.name}}>
+      <img src={{item.photo[1]}} alt={{item.name}}>
+    </div>
+  </div>
+</section>
