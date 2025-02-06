@@ -7,13 +7,13 @@ import { CommonModule } from '@angular/common';
 import { LoadingComponent } from "../../../../components/loading/loading.component";
 import { Observable } from 'rxjs';
 import { CardComponent } from "../../../../components/card/card.component";
-import { GetUserChoiceOfProductService } from '../../../../services/GetUserChoiceOfProduct.service';
+import { GetUserChoiceAboutTheProductService } from '../../../../services/GetUserChoiceAboutTheProduct.service';
 
 @Component({
   selector: 'app-products',
   standalone: true,
   imports: [SidebarComponent, HttpClientModule, CommonModule, LoadingComponent, CardComponent],
-  providers: [ProductService, GetUserChoiceOfProductService],
+  providers: [ProductService, GetUserChoiceAboutTheProductService],
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss'
 })
@@ -21,7 +21,7 @@ export class ProductsComponent implements AfterViewInit{
 
   constructor(
     private productService: ProductService, 
-    private getUserChoiceOfProductsService: GetUserChoiceOfProductService
+    private getUserChoiceAboutTheProductService: GetUserChoiceAboutTheProductService
   ){}
 
   protected Jackets$!: Observable<IProducts[]>;
@@ -35,6 +35,7 @@ export class ProductsComponent implements AfterViewInit{
   }
 
   getChoice(id: string){
-    this.getUserChoiceOfProductsService.getChoice(id)
+    this.getUserChoiceAboutTheProductService.getChoice(id);
+    // window.open('/product', '_self')
   }
 }
