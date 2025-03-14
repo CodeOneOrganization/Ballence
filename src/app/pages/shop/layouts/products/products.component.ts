@@ -36,6 +36,6 @@ export class ProductsComponent implements AfterViewInit{
 
   getChoice(id: string){
     this.getUserChoiceAboutTheProductService.getChoice(id);
-    // window.open('/product', '_self')
+    window.open('/product', '_self')
   }
 }
