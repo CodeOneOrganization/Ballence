@@ -1,26 +1,60 @@
 <section class="footer">
   <h1><span>ballence</span></h1>
 
-  <menu class="navigation">
-    <a class="links" [href]="isHome? '/shop': '/' "><li>{{isHome? 'all Products' : 'Home'}}</li></a>
-    <li class="links" (click)="onClick('#news')">{{isHome? 'news' : 'new collection'}}</li>
-    <li class="links" (click)="onClick(0)">
+  <div class="footer-navigations">
+    
+    <menu class="navigation">
+      <h3 class="footer-sitemap">site map</h3>
 
-      back to top
+      <a class="links" [href]="isHome? '/shop': '/' ">
+        <li>{{isHome? 'all Products' : 'Home'}}</li>
+      </a>
 
-      <svg
-        width="0.833vw"
-        height="0.885vw"
-        viewBox="0 0 16 17"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M8.70711 0.292892C8.31658 -0.0976315 7.68342 -0.0976314 7.29289 0.292892L0.928932 6.65685C0.538407 7.04738 0.538407 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292892ZM9 17L9 1L7 1L7 17L9 17Z"
-          fill="#B6E02A"
-        />
-      </svg>
+      <li class="links" (click)="onClick('#news')">{{isHome? 'news' : ''}}</li>
 
-    </li>
-  </menu>
+      <li class="links" (click)="onClick(0)">
+
+        back to top
+
+        <svg width="0.833vw" height="0.885vw" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M8.70711 0.292892C8.31658 -0.0976315 7.68342 -0.0976314 7.29289 0.292892L0.928932 6.65685C0.538407 7.04738 0.538407 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292892ZM9 17L9 1L7 1L7 17L9 17Z"
+            fill="#B6E02A" />
+        </svg>
+
+      </li>
+
+    </menu>
+
+    <menu class="navigation">
+      <h3 class="footer-sitemap">History</h3>
+
+      <li class="links">brand history</li>
+
+      <li class="links">xxxxx</li>
+
+      <li class="links">xxxxx</li>
+
+    </menu>
+
+    <menu class="navigation">
+      <h3 class="footer-sitemap">influence</h3>
+
+      <li class="links">xxxxx</li>
+
+      <li class="links">xxxxx</li>
+
+      <li class="links">xxxxx</li>
+
+    </menu>
+
+  </div>
+
+  <div class="line"></div>
+
+  <div class="footer-informations">
+    <h4>ballence all directs reserved ©2025 .</h4>
+    <h4>by Douyglas Rodrigues .</h4>
+  </div>
+
 </section>

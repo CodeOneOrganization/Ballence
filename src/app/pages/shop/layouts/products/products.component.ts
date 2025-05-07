@@ -29,6 +29,7 @@ export class ProductsComponent implements AfterViewInit{
 
   ngAfterViewInit(): void {
     this.productService.loadProducts();
+    
     this.Jackets$ = this.productService.getFiltredProducts('jacket'); 
     this.Bags$ = this.productService.getFiltredProducts('bag'); 
     
