@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnDestroy, ViewChild, Input } from '@angular/core';
 import { LenisScrollService } from '../../services/LenisScrollService.service';
 import gsap from 'gsap';
 
@@ -13,6 +13,9 @@ export class ButtonComponent implements OnDestroy{
 
   @ViewChild('content1') content1Ref!: ElementRef
   @ViewChild('content2') content2Ref!: ElementRef
+  
+  @Input() TextOne!: string
+  @Input() TextTwo!: string
 
   constructor(private lenisScrollService: LenisScrollService) {}
 
