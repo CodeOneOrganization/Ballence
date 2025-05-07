@@ -18,7 +18,6 @@
 }
 
 .navigation{
-    margin-top: 13.188vw;
     
     list-style: none;
 
@@ -27,6 +26,10 @@
     display: flex;
     flex-direction: column;
     gap: 0.833vw;
+}
+
+.navigation h3{
+    color: var(--color-green);
 }
 
 .navigation a,
@@ -54,4 +57,28 @@
   
   .navigation .links:hover::before {
     width: 9%;
-  }
+}
+
+.footer-navigations{
+    height: 20.104vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8.75vw;
+}
+
+.line{
+    width: 100%;
+    height: 0.1vw;
+    background-color: var(--color-green);
+}
+
+.footer-informations{
+    padding-left: 38.323vw;
+    margin: 4.01vw 0 4.01vw 0;
+}
+
+.footer-informations h4{
+  
+    color: var(--color-green);
+}

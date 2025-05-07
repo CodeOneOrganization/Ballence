@@ -17,7 +17,7 @@ import { CardComponent } from "../../components/card/card.component";
 })
 export class HeroComponent implements OnInit {
 
-  protected Choice!: IProducts[] | [];
+  public Choice!: IProducts[] | [];
   constructor(private getUserChoiceAboutTheProduct: GetUserChoiceAboutTheProductService){}
 
   ngOnInit(): void {

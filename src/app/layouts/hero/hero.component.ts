@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 import { ButtonComponent } from "../../components/button/button.component";
 import { MarqueeComponent } from "../../components/marquee/marquee.component";
 import gsap from 'gsap';
@@ -72,5 +72,8 @@ export class HeroComponent implements AfterViewInit{
     this.onEnterAnimation();
   }
 
+  ngOnDestroy(): void {
+      this.lenisScrollService.scrollTo(0, {duration: 0, immediate: true, force: true})
+  }
  
 }

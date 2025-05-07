@@ -21,9 +21,11 @@ export class FooterComponent implements OnInit, AfterViewInit {
   ) {}
 
   ngOnInit(): void {
+    
     this.isHomePageService.verify().subscribe((value) => {
       this.isHome = value
     })
+
   }
 
   ngAfterViewInit(): void {

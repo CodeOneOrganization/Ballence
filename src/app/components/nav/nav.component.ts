@@ -34,12 +34,10 @@ export class NavComponent implements OnInit, AfterViewInit {
   ) { }
 
   ngOnInit(): void {
+    
     this.isHomePageService.verify().subscribe((value) => {
       this.isHome = value;
-      console.log('ishome nav: ' + this.isHome);
     });
-
-    // this.initThemeEventListeners()
 
   }
 

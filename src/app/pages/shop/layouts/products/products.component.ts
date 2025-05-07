@@ -29,6 +29,7 @@ export class ProductsComponent implements AfterViewInit{
 
   ngAfterViewInit(): void {
     this.productService.loadProducts();
+    
     this.Jackets$ = this.productService.getFiltredProducts('jacket'); 
     this.Bags$ = this.productService.getFiltredProducts('bag'); 
     
@@ -36,6 +37,6 @@ export class ProductsComponent implements AfterViewInit{
 
   getChoice(id: string){
     this.getUserChoiceAboutTheProductService.getChoice(id);
-    // window.open('/product', '_self')
+    window.open('/product', '_self')
   }
 }

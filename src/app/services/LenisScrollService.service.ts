@@ -5,6 +5,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 @Injectable({
     providedIn: 'root'
 })
+
+
 export class LenisScrollService implements OnDestroy {
 
     private lenis!: Lenis;
