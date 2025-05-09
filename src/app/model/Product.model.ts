@@ -1,4 +1,4 @@
-enum size{
+export enum size{
   xxs ='xxs',
   xs = 'xs',
   s = 's',

@@ -12,7 +12,8 @@ export class GetUserChoiceAboutTheProductService{
   ){}
 
   public getChoice(id: string){
-    this.productService.getProductById(id).subscribe((data) => localStorage.setItem('userChoice', JSON.stringify(data)))
+    
+    this.productService.getProductById(id).subscribe((data) => localStorage.setItem('userChoice', JSON.stringify(data?.filter(x => x.id == id))))
 
   }
 

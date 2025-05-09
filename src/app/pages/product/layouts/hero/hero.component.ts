@@ -23,6 +23,7 @@ export class HeroComponent implements OnInit {
   ngOnInit(): void {
 
     this.returnChoice()
+    
   }
 
   returnChoice(){
