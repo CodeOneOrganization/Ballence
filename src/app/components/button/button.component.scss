@@ -28,3 +28,29 @@
     align-items: center;
     justify-content: center;
 }
+
+@media screen and (max-width: 500px) {
+    .button-component{
+    
+        width: 66.403vw;
+        height: 11.443vw;
+    
+        margin-top: 2.552vw;
+    
+    
+        font-size:3.468vw;
+        
+        margin-left: 1.244vw;
+        margin-top: 8.955vw;
+    }
+
+    .content{
+        justify-content: space-around;
+    }
+
+    .content svg{
+        margin-left: 0.781vw;
+        height: 35.368vw;
+        width: 35.368vw;
+    }
+}

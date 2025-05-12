@@ -14,11 +14,11 @@
   aspect-ratio: 466 / 845;
   // height: 78vh;
   width: calc((100vw - 2 * var(--container-padding)) / 4);
-  min-width: 300px;
+  min-width: 15.625vw;
 
 }
 .item .info {
-  padding-inline: 51px;
+  padding-inline: 2.656vw;
 }
 
 .item .name {
@@ -32,4 +32,29 @@
   float: right;
 
   font-size: 1em;
+}
+
+@media screen and (max-width: 500px) {
+  .item picture {
+    display: block;
+  
+    aspect-ratio: 233 / 445;  
+    width: calc((100vw - 2 * var(--container-padding)) / 2);
+    
+  }
+
+  .info{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .item .name,
+  .item .price{
+    display: initial;
+    font-size: 2.488vw;
+  }
+
+  .item .name{
+    white-space: nowrap;
+  }
 }

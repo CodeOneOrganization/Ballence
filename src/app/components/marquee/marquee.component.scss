@@ -28,3 +28,9 @@
         transform: translateX(calc(-100% - 0vw));
     }
 }
+
+@media screen and (max-width: 500px) {
+    .component-marquee h1{
+        font-size: 31.841vw;
+    }
+}
