@@ -6,6 +6,7 @@
     width: 100vw;
     height: 72vw;
 }
+
 .high-fashion-cards{
     position: absolute;
     top: 8.125vw;
@@ -13,6 +14,7 @@
     display: flex;
 
 }
+
 .high-fashion-card{
     overflow: hidden;
     position: relative;
@@ -55,4 +57,20 @@
 
 .high-fashion-card:last-of-type h2{
     color: var(--color-green);
+}
+
+@media screen and (max-width: 500px) {
+    .high_fashion{
+        height: 123.5dvh;
+    }
+    .high-fashion-cards{
+        flex-direction: column;
+    }
+    .high-fashion-card{
+        width: 100vw;
+        height: 100.363vw;
+    }
+    .high-fashion-card h2{
+        font-size:  7.96vw;
+    }
 }

@@ -1,7 +1,16 @@
 <section class="hero">
   <app-loading *ngIf="Choice?.length === 0"></app-loading>
-    <div class="card">
+  
+  <div class="card">
       <app-card Description={{Choice[0].description}} Name={{Choice[0].name}} Price={{Choice[0].price}}></app-card>
     </div>
-      <img src={{Choice[0].photo[1]}} alt={{Choice[5]}}>
-</section>
+  
+    <img class="product" src={{Choice[0].photo[1]}} alt={{Choice[5]}}>
+
+    <div class="description">
+      <img class="product-mini" src={{Choice[0].photo[1]}} alt={{Choice[5]}}>
+      <h2>DETAILS</h2>
+      <p>{{Choice[0].description}}</p>
+    </div>
+
+  </section>

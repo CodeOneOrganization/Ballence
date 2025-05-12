@@ -1,25 +1,14 @@
 .news {
-  // width: auto;
   padding-bottom: 33px;
-  // height: 60.365vw;
-
   background-color: var(--color-green);
 }
 
-// .news .wrapper {
-//   display: flex;
-//   white-space: nowrap;
-//   overflow: hidden;
 
-//   cursor: grab;
-// }
-
-// .news .wrapper:active {
-//   cursor: grabbing;
-// }
-
-.fakeCards{
-  display: flex;
+@media screen and (max-width: 500px) {
+ .news{
+  padding-top: 14.179vw;
+ } 
+ .news h2{
+  font-size: 11.94vw;
+ }
 }
-
-

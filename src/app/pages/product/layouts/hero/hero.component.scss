@@ -1,19 +1,48 @@
 .hero{
   position: relative;
   background-color: var(--color-blue);
-}
-
-
-img{
-  
-  object-fit: cover;
+  padding-top: 0;
+  padding-bottom: 4vw;
 }
 
 .card{
   position: absolute;
-  top: 50%;
+  top: 10%;
   left: 50%;
 
-  transform: translate(-50%, -40%);
+  transform: translate(-50%, 0%);
+
+  z-index: 99;
   
+}
+
+.product{
+  width: 48.281vw;
+  position: absolute;
+  top: -10%;
+  object-fit: cover;
+  z-index: 1;
+
+}
+
+.description{
+  width: 20.26vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 70.906vw;
+}
+
+.description p,
+.description h2{
+  color: var(--color-green);
+}
+
+.product-mini{
+  object-fit: cover;
+  width: 24.141vw;
+  // height: 20vw;
 }

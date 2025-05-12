@@ -1,0 +1,13 @@
+<section class="RelacionedProducts">
+  <h2 class="title">RELACIONED</h2>
+
+  <div class="products-section jackets">
+    <app-loading *ngIf="(Jackets$ | async)?.length === 0"></app-loading>
+    <div class="wrapper">
+      <div class="item" *ngFor="let item of (Jackets$ | async)">
+        <app-card (click)="getChoice(item.id)" src={{item.photo[1]}} alt={{item.photo[0]}} price={{item.price}} name={{item.name}}></app-card>
+      </div>
+    </div>
+  </div>
+
+</section>

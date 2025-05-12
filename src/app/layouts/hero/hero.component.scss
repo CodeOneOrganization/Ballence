@@ -53,3 +53,39 @@
 .hero-marquee .marquee{
     transform: translateY(100%);
 }
+
+@media screen and (max-width: 500px) {
+    .hero{
+        height: 100dvh;
+        padding-inline: 2.488vw;
+    }
+    .hero-marquee{
+        margin-top: 38.443vw;
+    }
+
+    .hero-card{
+        transform: translateY(100%);
+
+        padding: 0;
+        padding-top: 6.219vw;
+
+        background-color: var(--color-green);
+        
+        width: 68.905vw;
+        height: 60.557vw;
+    
+        position: absolute;
+        
+        bottom: 2.5vw;
+    }
+
+    .hero-card p{
+          margin-left: 1.244vw;
+        font-size: 2.488vw;
+    }
+
+    .hero-card h3{
+          margin-left: 1.244vw;
+        font-size: 7.96vw;
+    }
+}
