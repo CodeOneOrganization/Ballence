@@ -47,3 +47,30 @@
     transition: all .1s;
     
 }
+
+@media screen and (max-width: 500px){
+
+    .about{
+        height: 208vw;
+    }
+
+    .about-marquee{
+        margin-top: 0;
+    }
+
+    .about p{
+        font-size: 3.5vw;
+    }
+
+    .about img:first-of-type{
+        width: 40.25vw;
+        top: 170vw;
+        left: 21.5vw;
+    }
+
+    .about img:last-of-type{
+        width: 40.25vw;
+        right: 1.458vw;
+        bottom: 1vw;
+    }
+}
