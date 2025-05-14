@@ -82,3 +82,46 @@
   
     color: var(--color-green);
 }
+
+@media screen and (max-width: 500px) {
+
+    .footer{
+        height: 209vw;
+    }
+
+    .footer h1{
+        font-size: 19.75vw;
+
+        margin-top: 9.063vw;
+    }   
+
+    .footer-navigations{
+        margin-top: 15vw;
+        margin-left: 3vw;
+        margin-bottom: 1vw;
+        justify-content: initial;
+        align-items: initial;
+        gap: 8.75vw;
+        height: 100vw;
+        flex-direction: column;
+    }
+
+    .footer-navigations menu h3{
+        font-size: 12vw;
+    }
+
+    .footer-navigations menu a,
+    .footer-navigations menu li{
+        font-size: 4vw;
+    }
+
+    .footer-informations h4{
+        font-size: 3vw;
+        white-space: nowrap;
+    }
+
+    .footer-informations{
+        padding-left: 3vw;
+        margin: 4.01vw 0 4.01vw 0;
+    }
+}
