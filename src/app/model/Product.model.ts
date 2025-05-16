@@ -8,6 +8,21 @@ export enum size{
   xxl = 'xxl'
 }
 
+export interface IProductPost{
+  name: string;
+  brand: string;
+  price: number;
+  img: File;
+
+  description: string;
+
+  isNew: boolean;
+  type: string;
+  color: string;
+
+  size: size;
+}
+
 export interface IProducts{
   id: string;
   
