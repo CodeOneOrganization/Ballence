@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { BehaviorSubject, filter, map, Observable, tap } from "rxjs";
-import { IProducts, size } from "../model/Product.model";
+import { BehaviorSubject, map, Observable, tap } from "rxjs";
+import { IProducts } from "../model/Product.model";
 
 type FilterKeys = keyof IProducts;
 
@@ -42,5 +42,11 @@ export class ProductService {
     );
   }
   
-  
+  postProduct(product: IProducts){
+    this.httpClient.post<IProducts>("http://localhost:3000/products", {...product}).subscribe(data => {
+
+      console.log(data)
+    
+    })
+  }
 }

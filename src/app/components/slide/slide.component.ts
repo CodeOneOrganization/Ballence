@@ -16,12 +16,16 @@ import { Observable } from 'rxjs';
 export class SlideComponent implements OnInit{
 
   @Input() Products!: IProducts[] | null
-  protected fakeArray: number[] = [1,2,3,4,5,6,7,8]
+  private windowWidth = window.innerWidth
+  public slides = this.windowWidth <= 500 ? 2 : 4
+
 
   teste(){
     console.log(this.Products)
   }
   ngOnInit(): void {
       this.teste()
+
+      console.log(this.windowWidth)
   }
 }

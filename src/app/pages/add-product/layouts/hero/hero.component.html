@@ -1,0 +1,59 @@
+<section class="hero">
+
+  <h2 class="title blue">register product</h2>
+
+
+  <form onsubmit="event.preventDefault()">
+
+    <div class="camp">
+      <label for="name" class="large">NOME</label>
+      <input required required ="name" type="text">
+    </div>
+
+    <div class="camp">
+      <label for="brand" class="large">Brand</label>
+      <input required id="brand" type="text">
+    </div>
+
+    <div class="camp">
+      <label for="name" class="large">price</label>
+      <input required id="price" type="text">
+    </div>
+
+    <div class="camp">
+      <label for="size" class="large">size</label>
+      <input required id="size" type="text">
+    </div>
+
+    <div class="camp">
+      <label for="photo" class="large">photo</label>
+      <input class="small" required id="photo" type="file">
+    </div>
+
+    <div class="camp">
+      <label for="type" class="large">type</label>
+      <input required id="type" type="text">
+    </div>
+
+    <div class="camp">
+      <label for="color" class="large">color</label>
+      <input required id="color" type="file">
+    </div>
+
+    <div class="camp">
+      <label for="isnew" class="large">is new?</label>
+      <input class="small" required id="isnew" type="file">
+    </div>
+
+    <div class="camp">
+      <label for="description" class="large">description</label>
+      <textarea required name="description" id="description" ></textarea>
+    </div>
+
+  </form>
+
+  <div (click)="submit()">
+    <app-button TextOne="submit" TextTwo="create"></app-button>
+  </div>
+
+</section>
