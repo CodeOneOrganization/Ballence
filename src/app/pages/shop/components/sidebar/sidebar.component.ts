@@ -1,10 +1,15 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import gsap from 'gsap';
+import { filter, size } from '../../../../model/Product.model';
+import { FilterService } from '../../../../services/FiltersService.service';
+
+
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
   imports: [],
+  providers: [FilterService],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
 })
@@ -16,6 +21,9 @@ export class SidebarComponent {
     private isFilterOpen!: boolean
     private isBrandListOpen!: boolean
     private isSizeListOpen!: boolean
+
+
+    constructor(private filterService: FilterService){}
 
     //animação para abrir o filtro de pesquisa
    toggleFilter(){
@@ -82,5 +90,15 @@ export class SidebarComponent {
     this.isSizeListOpen = !this.isSizeListOpen
    }
 
-   
+   saveFilterBrand(brand: string){
+    this.filterService.saveFilterBrand(brand)
+   }
+
+   saveFilterSize(size: string){
+    this.filterService.saveFilterSize(size)
+  }
+
+  cleanFilters(){
+    this.filterService.cleanFilters()
+  }
 }

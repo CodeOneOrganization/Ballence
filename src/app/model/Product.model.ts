@@ -8,6 +8,11 @@ export enum size{
   xxl = 'xxl'
 }
 
+export interface filter {
+  brand: string | undefined,
+  size: size | undefined
+}
+
 export interface IProductPost{
   name: string;
   brand: string;
