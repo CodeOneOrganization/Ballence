@@ -36,7 +36,7 @@
   letter-spacing: 0.2vw;
 }
 
-
+button,
 .sizes h4,
 .brands h4 {
   font-weight: 900;
@@ -61,6 +61,23 @@
   height: 2.656vw;
 }
 
+button{
+  color: var(--color-green);
+  cursor: pointer;
+  border: none;
+
+  width: 100%;
+  height: 4vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 1vw;
+
+  background-color: transparent;
+
+}
+
+button svg,
 .sizes ul li svg,
 .brands ul li svg{
   transform: scale(0);
@@ -78,11 +95,13 @@
   padding-top:.719vw;
 }
 
+button:hover,
 .sizes ul li:hover,
 .brands ul li:hover {
   background-color: var(--color-dark-blue);
 }
 
+button:hover svg,
 .sizes ul li:hover svg,
 .brands ul li:hover svg{
   transform: scale(1);

@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { BehaviorSubject, filter, map, Observable, tap } from "rxjs";
-import { IProducts, size } from "../model/Product.model";
+import { BehaviorSubject, map, Observable, tap } from "rxjs";
+import { IProductPost, IProducts } from "../model/Product.model";
 
 type FilterKeys = keyof IProducts;
 
@@ -42,5 +42,25 @@ export class ProductService {
     );
   }
   
-  
+  postProduct(product: IProductPost){
+
+    const formData = new FormData()
+
+    formData.append('name', product.name)
+    formData.append('brand', product.brand)
+    formData.append('price', String(product.price))
+    formData.append('size', product.size)
+    formData.append('img', product.img)
+    formData.append('type', product.type)
+    formData.append('color', product.color)
+    formData.append('isNew', String(product.isNew))
+    formData.append('description', product.description)
+    
+
+    this.httpClient.post<IProductPost>("http://localhost:3000/products/", formData).subscribe(data => {
+
+      console.log(data)
+    
+    })
+  }
 }

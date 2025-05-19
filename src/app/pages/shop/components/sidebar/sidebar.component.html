@@ -4,7 +4,9 @@
     <div class="brands">
       <h4 class="green" (click)="toogleBrandList()">brands</h4>
       <ul class="list-filter-brands">
-        <li>
+
+        <li (click)="saveFilterBrand('gucci')">
+
           <img src="/gucciLogo.png" alt="">
           gucci
           <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -12,20 +14,23 @@
           </svg>
 
         </li>
-        <li>
+
+        <li (click)="saveFilterBrand('dolce&gabbana')">
           <img src="/D&G_Logo.png" alt="">
           Dolce&gabbana
           <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="8.5" cy="8.5" r="8.5" fill="#B6E02A" />
           </svg>
         </li>
-        <li>
+
+        <li (click)="saveFilterBrand('prada')">
           <img src="/PradaLogo.png" alt="">
           Prada
           <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="8.5" cy="8.5" r="8.5" fill="#B6E02A" />
           </svg>
         </li>
+
       </ul>
     </div>
 
@@ -34,58 +39,73 @@
     <div class="sizes">
       <h4 class="green" (click)="toogleSizeList()">sizes</h4>
       <ul class="list-filter-sizes">
-        <li>
+
+        <li (click)="saveFilterSize('xxs')">
           xxs
           <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="8.5" cy="8.5" r="8.5" fill="#B6E02A" />
           </svg>
 
         </li>
-        <li>
+
+        <li (click)="saveFilterSize('xs')">
           xs
           <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="8.5" cy="8.5" r="8.5" fill="#B6E02A" />
           </svg>
 
         </li>
-        <li>
+
+        <li (click)="saveFilterSize('s')">
           s
           <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="8.5" cy="8.5" r="8.5" fill="#B6E02A" />
           </svg>
 
         </li>
-        <li>
+        <li (click)="saveFilterSize('m')">
           m
           <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="8.5" cy="8.5" r="8.5" fill="#B6E02A" />
           </svg>
 
         </li>
-        <li>
+        <li (click)="saveFilterSize('l')">
           l
           <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="8.5" cy="8.5" r="8.5" fill="#B6E02A" />
           </svg>
 
         </li>
-        <li>
+        <li (click)="saveFilterSize('xl')">
           xl
           <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="8.5" cy="8.5" r="8.5" fill="#B6E02A" />
           </svg>
 
         </li>
-        <li>
+        <li (click)="saveFilterSize('xxl')">
           xxl
           <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="8.5" cy="8.5" r="8.5" fill="#B6E02A" />
           </svg>
 
         </li>
+
       </ul>
     </div>
 
+
     <div class="line"></div>
+
   </nav>
+
+  <button (click)="cleanFilters()">
+    clean filters
+
+    <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="8.5" cy="8.5" r="8.5" fill="#B6E02A" />
+    </svg>
+  </button>
+
 </aside>

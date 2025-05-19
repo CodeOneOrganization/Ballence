@@ -6,15 +6,17 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+
 }
 
 .item picture {
   display: block;
 
   aspect-ratio: 466 / 845;
-  // height: 78vh;
-  width: calc((100vw - 2 * var(--container-padding)) / 4);
+  height: 80vh;
+  width: 24.271vw;
   min-width: 15.625vw;
+
 
 }
 .item .info {
@@ -39,7 +41,7 @@
     display: block;
   
     aspect-ratio: 233 / 445;  
-    width: calc((100vw - 2 * var(--container-padding)) / 2);
+    width: 100vw;
     
   }
 
@@ -51,7 +53,7 @@
   .item .name,
   .item .price{
     display: initial;
-    font-size: 2.488vw;
+    font-size: 3.488vw;
   }
 
   .item .name{
