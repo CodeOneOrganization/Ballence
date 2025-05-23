@@ -54,6 +54,8 @@ export class HeroComponent {
     }
 
     this.productService.postProduct(this.product)
+    
+
     console.log(this.img.nativeElement.files)
   }
 

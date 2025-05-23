@@ -28,6 +28,38 @@ export class SidebarComponent {
     //animação para abrir o filtro de pesquisa
    toggleFilter(){
 
+     if(window.innerWidth <= 500 ){
+
+        gsap.to(this.filters.nativeElement,{
+          paddingLeft: this.isFilterOpen ? '1.45vw' : '50vw',
+          duration: 1,
+          ease: 'power2.inOut'
+       });
+
+        gsap.to(this.aside.nativeElement,{
+          x: this.isFilterOpen ? "-100%" : "0%",
+          duration: 1,
+         ease: 'power2.inOut',
+       })
+
+        this.setIsFilterOpen()
+
+      gsap.to(this.filters.nativeElement,{
+        color: this.isFilterOpen ? '#B6E02A' : '#0b5294', 
+        duration: 1,
+        ease: "power2.inOut"
+      })
+
+      gsap.to(".line",{
+        width: this.isFilterOpen ? "100vw" : '0vw',
+        duration: 1,
+        ease: 'power2.inOut',
+        delay:  .5  
+      })
+
+      return
+     }
+    
     gsap.to(this.filters.nativeElement,{
       paddingLeft: this.isFilterOpen ? '1.45vw' : '15vw',
       duration: 1,
@@ -58,6 +90,21 @@ export class SidebarComponent {
    }
 
    toogleBrandList(){
+
+    if(window.innerWidth <= 500 ){
+
+      gsap.to(".list-filter-brands",{
+        height: this.isBrandListOpen ? "0vw" : "29.296vw",
+        duration: .5,
+        ease: "power2.inOut"
+      })
+
+        this.setIsBrandListOpen()
+      
+        return
+
+    }
+
     gsap.to(".list-filter-brands",{
       height: this.isBrandListOpen ? "0vw" : "9.296vw",
       duration: .5,
@@ -69,6 +116,18 @@ export class SidebarComponent {
    }
 
    toogleSizeList(){
+
+    if(window.innerWidth <= 500 ){
+        gsap.to(".list-filter-sizes",{
+        height: this.isSizeListOpen ? "0vw" : "60.592vw",
+        duration: .5,
+        ease: "power2.inOut"
+       })
+
+     this.setIsSizeListOpen()
+     return
+    }
+
     gsap.to(".list-filter-sizes",{
       height: this.isSizeListOpen ? "0vw" : "18.592vw",
       duration: .5,

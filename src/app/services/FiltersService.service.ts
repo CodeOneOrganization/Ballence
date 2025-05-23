@@ -4,9 +4,13 @@ import { filter, size } from "../model/Product.model";
 @Injectable({providedIn: 'root'})
 export class FilterService{
 
-  private filter: filter = {
+  public filter: filter = {
     brand: undefined,
     size: undefined
+  }
+
+  constructor(){
+    this.loadFilter()
   }
 
   loadFilter(){
@@ -47,6 +51,9 @@ export class FilterService{
 
     localStorage.setItem('filterUser', JSON.stringify(this.filter))
 
+        setTimeout(()=> {
+      window.location.reload()
+    }, 500)
 
     console.log(this.filter)
    }
@@ -60,7 +67,7 @@ export class FilterService{
     localStorage.setItem('filterUser', JSON.stringify(this.filter))
     setTimeout(()=> {
       window.location.reload()
-    }, 1500)
+    }, 400)
 
     console.log(this.filter)
    }

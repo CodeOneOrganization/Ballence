@@ -16,3 +16,16 @@
   pointer-events: none;
   filter: blur(5px);
 }
+
+@media screen and (max-width: 500px){
+  
+  .hero{
+    height: 58.5vw;
+  }
+
+  .hero img{
+    height: 100%;
+    width: 100%;
+  }
+  
+}

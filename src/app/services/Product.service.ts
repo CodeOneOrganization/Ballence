@@ -59,7 +59,7 @@ export class ProductService {
 
     this.httpClient.post<IProductPost>("http://localhost:3000/products/", formData).subscribe(data => {
 
-      console.log(data)
+      window.alert(data)
     
     })
   }
