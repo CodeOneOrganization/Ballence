@@ -113,3 +113,34 @@ button:hover svg,
   background-color: var(--color-green);
   margin-top: 2.292vw;
 }
+
+@media screen and (max-width: 500px) {
+  .sidebar{
+    width: 80%;
+  }
+
+  .sidebar_button{
+    font-size: 13vw;
+  }
+
+  .filters{
+    margin-top: 1vw;
+  }
+
+  .sidebar nav h4,
+  .filters{
+    font-size: 3vw;
+  }
+
+  .sizes ul li,
+  .brands ul li{
+    height: 8vw;
+  }
+
+    .sizes ul li:first-of-type,
+  .brands ul li:first-of-type{  
+
+    margin-top: 1vw;
+
+  }
+}

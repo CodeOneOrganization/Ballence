@@ -18,7 +18,7 @@ import { FilterService } from '../../../../services/FiltersService.service';
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss'
 })
-export class ProductsComponent implements OnInit{
+export class ProductsComponent implements OnInit, AfterViewInit{
 
   constructor(
     private productService: ProductService, 
@@ -31,23 +31,23 @@ export class ProductsComponent implements OnInit{
 
   ngOnInit(): void {
     this.productService.loadProducts();
-    this.filterService.loadFilter()
+  }
 
-    const arrayProductsFilter = localStorage.getItem('filterUser')
-    const arrayProductsFilterJson: filter = JSON.parse(arrayProductsFilter!)
+  ngAfterViewInit(): void {
 
-    if(arrayProductsFilterJson.brand != undefined && arrayProductsFilterJson.size != undefined){
+    if(this.filterService.filter.brand != undefined && this.filterService.filter.size != undefined){
+
       this.Jackets$ = this.productService.getFiltredProducts({
         type: 'jacket', 
-        brand: arrayProductsFilterJson.brand,
-        size: arrayProductsFilterJson.size
+        brand: this.filterService.filter.brand,
+        size: this.filterService.filter.size
       }); 
       
       this.Bags$ = this.productService.getFiltredProducts({
         type: 'bag',
-        brand: arrayProductsFilterJson.brand,
-        size: arrayProductsFilterJson.size
-        }); 
+        brand: this.filterService.filter.brand,
+        size: this.filterService.filter.size
+      }); 
 
     }else{
 
