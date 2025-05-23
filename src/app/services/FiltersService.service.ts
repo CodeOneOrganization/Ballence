@@ -59,6 +59,7 @@ export class FilterService{
    }
 
    cleanFilters(){
+    
     this.filter = {
       brand: undefined,
       size: undefined
