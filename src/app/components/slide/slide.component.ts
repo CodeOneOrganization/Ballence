@@ -13,19 +13,10 @@ import { Observable } from 'rxjs';
   templateUrl: './slide.component.html',
   styleUrl: './slide.component.scss'
 })
-export class SlideComponent implements OnInit{
+export class SlideComponent {
 
   @Input() Products!: IProducts[] | null
   private windowWidth = window.innerWidth
   public slides = this.windowWidth <= 500 ? 2 : 4
 
-
-  teste(){
-    console.log(this.Products)
-  }
-  ngOnInit(): void {
-      this.teste()
-
-      console.log(this.windowWidth)
-  }
 }

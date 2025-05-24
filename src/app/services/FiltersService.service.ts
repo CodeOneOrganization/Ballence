@@ -8,15 +8,17 @@ export class FilterService{
     brand: undefined,
     size: undefined
   }
+  
 
   constructor(){
-    this.loadFilter()
+    this.loadFilter() 
   }
 
   loadFilter(){
     
     const arrayProductsFilter = localStorage.getItem('filterUser')
-    const arrayProductsFilterJson: filter = JSON.parse(arrayProductsFilter!)
+    const arrayProductsFilterJson: filter = JSON.parse(arrayProductsFilter ? arrayProductsFilter : '{}')
+
 
     this.filter = {
       brand: arrayProductsFilterJson.brand,
@@ -38,7 +40,6 @@ export class FilterService{
       window.location.reload()
     }, 500)
 
-    console.log(this.filter)
    }
 
    saveFilterSize(size: string){
@@ -55,11 +56,10 @@ export class FilterService{
       window.location.reload()
     }, 500)
 
-    console.log(this.filter)
    }
 
    cleanFilters(){
-    
+
     this.filter = {
       brand: undefined,
       size: undefined
@@ -70,6 +70,7 @@ export class FilterService{
       window.location.reload()
     }, 400)
 
-    console.log(this.filter)
    }
+
+   
 }

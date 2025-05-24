@@ -28,7 +28,6 @@ export class HeroComponent implements OnInit {
 
   returnChoice(){
    this.Choice = this.getUserChoiceAboutTheProduct.returnChoice()
-   console.log(this.Choice)
   }
 
 }
