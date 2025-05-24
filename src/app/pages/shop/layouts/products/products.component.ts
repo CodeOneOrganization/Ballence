@@ -31,7 +31,6 @@ export class ProductsComponent implements OnInit, AfterViewInit{
 
   ngOnInit(): void {
     this.productService.loadProducts();
-    localStorage.setItem('filterUser', JSON.stringify({}))
   }
 
   ngAfterViewInit(): void {

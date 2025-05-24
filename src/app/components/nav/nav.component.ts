@@ -44,7 +44,6 @@ export class NavComponent implements OnInit, AfterViewInit {
   public initThemeEventListeners() {
     gsap.registerPlugin(ScrollTrigger);
     const news = this.elementsService.getNewsElement()
-    console.log("news", news)
 
     if (!news) return
 
@@ -66,7 +65,6 @@ export class NavComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     this.initThemeEventListeners()
 
-    console.log("service ElementsService", ElementsService)
   }
 
   protected onClick(link: string | number): void {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HeroComponent } from "./layouts/hero/hero.component";
 import { ProductsComponent } from "./layouts/products/products.component";
 
@@ -9,6 +9,7 @@ import { ProductsComponent } from "./layouts/products/products.component";
   templateUrl: './shop.component.html',
   styleUrl: './shop.component.scss'
 })
-export class ShopComponent {
+export class ShopComponent{
   
 }
+

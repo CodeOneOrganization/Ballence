@@ -12,7 +12,7 @@ export class ProductService {
   private productsSubject = new BehaviorSubject<IProducts[] | null>(null);
 
   loadProducts(): void {
-    this.httpClient.get<IProducts[]>("http://localhost:3000/products").pipe(
+    this.httpClient.get<IProducts[]>("https://ballenceapi-production.up.railway.app/products").pipe(
       tap((products) => this.productsSubject.next(products))
     ).subscribe();
   }
@@ -57,7 +57,7 @@ export class ProductService {
     formData.append('description', product.description)
     
 
-    this.httpClient.post<IProductPost>("http://localhost:3000/products/", formData).subscribe(data => {
+    this.httpClient.post<IProductPost>("https://ballenceapi-production.up.railway.app/products", formData).subscribe(data => {
 
       window.alert(data)
     

@@ -20,7 +20,6 @@ export class GetUserChoiceAboutTheProductService{
   public returnChoice(){
     const arrayChoice = localStorage.getItem('userChoice');
     this.Choice = arrayChoice ? JSON.parse(arrayChoice) : []
-    console.log(this.Choice)
 
     return this.Choice
   }

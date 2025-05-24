@@ -35,7 +35,6 @@ export class AboutComponent implements AfterViewInit {
       imageElement.addEventListener("mouseenter", (e) => {
         const imageSrc = String(imageElement.dataset["imageSrc"])
         const imageHeight = Number(imageElement.dataset["imageHeight"])
-        console.log("imageHeight", imageHeight)
 
         const { x, y, width, height } = imageElement.getBoundingClientRect()
         const x_ci = (width / 2) + x
