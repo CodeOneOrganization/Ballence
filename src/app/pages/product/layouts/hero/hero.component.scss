@@ -46,3 +46,11 @@
   width: 24.141vw;
   // height: 20vw;
 }
+
+@media screen and (max-width: 500px){
+  .product{
+    width: 90vw;
+    aspect-ratio: 4/4;
+    top: -35vw;
+  }
+}

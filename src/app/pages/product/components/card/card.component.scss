@@ -5,14 +5,15 @@
   padding: 1vw 2.135vw 4vw 1vw;
 }
 
-h2{
-  // text-align: center;
-  
-}
-
 .priceAndDescription{
   padding-top: 1.406vw;
   display: flex;
   justify-content: space-between;
 }
 
+@media screen and (max-width: 500px) {
+  .card{
+    width: 70vw;
+    margin-top: 30vw;
+  }
+}
