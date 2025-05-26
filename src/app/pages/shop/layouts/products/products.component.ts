@@ -35,7 +35,7 @@ export class ProductsComponent implements OnInit, AfterViewInit{
 
   ngAfterViewInit(): void {
 
-    if(this.filterService.filter.brand != undefined && this.filterService.filter.size != undefined){
+    if(this.filterService.filter.brand != undefined || this.filterService.filter.size != undefined){
 
       this.Jackets$ = this.productService.getFiltredProducts({
         type: 'jacket', 
